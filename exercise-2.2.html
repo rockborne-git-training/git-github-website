@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Git Basics</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-2.1.html"><span class="step-number">2.1</span> GitHub Setup and Creating a Remote Repository</a></li>
+                    <li class="active"><a href="exercise-2.2.html"><span class="step-number">2.2</span> Linking a Local and Remote Repository</a></li>
+                    <li><a href="exercise-2.3.html"><span class="step-number">2.3</span> Pushing Changes to a Remote Repository</a></li>
+                    
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>2.2 Linking a Local and Remote Repository</h2>
+                <p>We're now going to link our <b>local</b> GitHub repository with the <b>remote</b> repository we've just created.<p></p>
+                <span class="step-indicator">Step 1 of 2</span>
+                <h2>Copy the GitHub Repository URL</h2>
+                <div class="content-card">
+                    
+                    <ul>
+                        <li>Go to the GitHub repository you just created</li>
+                        <li>It should prompt you with a link to set up your local repository with in the <b>Quick setup</b> section</li>
+                        <li>Copy the link, and then open Git Bash again</li>
+                    </ul>
+                        <div class="image-container">
+                            <img class="git_gif" src="images/github_link.gif">
+                        </div>
+                    <p><b><span style="color: #50bcc4;">Note:</span></b> Make sure you're in the git-exercises\git-exercise-01 working directory in Git Bash</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git remote add origin repository_url</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 2 of 2</span>
+                    <h2>Verifying the Remote Repository was Added</h2>
+                    <div class="content-card">
+                        <p>Your local Git repository should now be linked to the remote GitHub repository.<p>
+                        <p>It's good practice to verify that the intended actions were successfully run before we move on.</p>
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git remote -v</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <p><b><span style="color: #50bcc4;">You'll see:</span></b></p>
+                            <p>origin  https://github.com/user/repo.git (fetch)</p>
+                            <p>origin  https://github.com/user/repo.git (push)</p>
+                        </div>
+                        <ul>
+                            <li><b>origin -</b> Default name for the remote repository</li>
+                            <li><b>fetch -</b> URL used to pull updates</li>
+                            <li><b>push -</b> URL used to push changes</li>
+                        </ul>
+                </div>
+            </div>
+
+        
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, we learned how to link a local Git repository to a remote repository on GitHub. First, we copied the GitHub repository URL, which serves as the remote destination for our project. Then, we used the command git remote add origin to establish this link, where origin is the default name for our remote. To ensure the connection was set up correctly, we ran git remote -v, confirming that our local repository is now connected to GitHub. In the next lesson, we'll be learning how to <b>push changes</b> from our local repository, to the remote.</p>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev" disabled>&larr; Previous</button>
+                <div class="step-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="nav-arrow next">Next &rarr;</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

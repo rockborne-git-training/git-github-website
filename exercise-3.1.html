@@ -30,16 +30,17 @@
                 <span class="hamburger"></span>
             </button>
             <div class="sidebar-content">
-                <h3>Git Basics</h3>
+                <h3>Forking & Cloning a Repository, Git Log Command, Version Tags and Branches</h3>
                 <div class="progress-indicator">
                     <div class="progress-bar"></div>
                     <span class="progress-text">0/4 Steps</span>
                 </div>
                 <ul class="exercise-nav">
-                    <li><a href="exercise-2.1.html"><span class="step-number">2.1</span> GitHub Setup and Creating a Remote Repository</a></li>
-                    <li class="active"><a href="exercise-2.2.html"><span class="step-number">2.2</span> Linking a Local and Remote Repository</a></li>
-                    <li><a href="exercise-2.3.html"><span class="step-number">2.3</span> Pushing Changes to a Remote Repository</a></li>
-                    
+                    <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
+                    <li class="active"><a href="exercise-3.2.html"><span class="step-number">3.2</span> Git Log Commands</a></li>
+                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Tagging</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Branches</a></li>
                 </ul>
             </div>
         </aside>
@@ -48,19 +49,34 @@
         <main class="exercise-content">
 
             <div class="exercise-step" id="init">
-                <h2>2.1 GitHub Setup and Creating a Remote Repository</h2>
+                <h2>3.1 Forking & Cloning a Remote Repository</h2>
                 <div class="content-card">
-                    <p><b>What is GitHub?</b></p>
-                    <p><b>GitHub</b> is a cloud-based platform for hosting <b>Git</b> repositories. It allows developers to collaborate, track changes, and manage projects.</p>
-                    <p>So far, we've created a <b>local repository</b> on our machines, but this is only accessible by us. To make the files available for everyone working simultaneously on a project, we need to push our files to a <b>remote</b> repository.</p>
-                    <p>Let's take a look at how to do this.</p>
+                    <p>Cloning a repository from GitHub means creating a copy of a remote repository on your local machine. This allows you to work on the project, make changes, and later push updates back to GitHub.</p>
+                    <p>Why clone a repository?</p>
+
+                    <ul>
+                        <li><b>Work Offline -</b> You can make changes to a project without needing access to the internet</li>
+                        <li><b>Collaboration -</b> Teams can work simulteanously on the same project by cloning the same repository</li>
+                        <li><b>Backup & Version Control -</b> You can get a full version history of the project on your local machine</li>
+                        <li><b>Save Time -</b> You can clone starter code for projects instead of setting everything up manually</li>
+                    </ul>
+
+                    <p class="lesson-description">But if we all want to clone the same repository but have our own copies that wont affect each others, we need to <b>fork</b> the repository. This will create a copy of the repository under your individual GitHub accounts. After forking the repository, we then need to clone it to ensure that any changes we push to GitHub won't affect the original repository.</p>
+
+                    <div class="image-container">
+                        <img class="git_gif" src="images/github_fork_clone.webp">
+                    </div>
+                    <p class="image-link"><a href="https://chedyhammami.medium.com/git-clone-vs-fork-in-github-610f158d61e3">https://chedyhammami.medium.com/git-clone-vs-fork-in-github-610f158d61e3</a></p>
+
                     <h3>Lesson Objectives</h3>
                     <ul>
-                        <li>Create a GitHub account</li>
-                        <li>Create a remote repository on GitHub</li>
-                        <li>Link our local repository to the remote repository</li>
-                        <li>Push files and changes from the local repository to the remote repository</li>
+                        <li>Understand the concept of forking a remote repository and how it allows you to create a personal copy for modification</li>
+                        <li>Learn how to clone a remote repository to your local machine for making changes</li>
+                        <li>Understand the difference between forking and cloning, and when to use each</li>
+                        <li>Learn how to make changes in a cloned repository and push them back to the remote repository</li>
+                        <li>Use git log to view the commit history and track changes in the repository</li>
                     </ul>
+                    <p class="lesson-description">Let's start by cloning the training website so we can access it locally.</p>
                 </div>
             </div>
 

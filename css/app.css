@@ -156,6 +156,29 @@ body {
     margin-bottom: 1rem;
 }
 
+.lesson-description {
+    padding-top: 1.5rem;
+}
+
+/* README table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #50bcc4;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 /* CTA Section */
 .cta {
     padding: 5rem 2rem;
