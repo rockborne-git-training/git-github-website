@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Git Basics</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-1.1.html"><span class="step-number">1.1</span> Creating and Initialising a Local Repository</a></li>
+                    <li class="active"><a href="exercise-1.2.html"><span class="step-number">1.2</span> Staging a Change</a></li>
+                    <li><a href="exercise-1.3.html"><span class="step-number">1.3</span> Committing a Change</a></li>
+                    
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>2.1 Creating a Remote Repository in GitHub</h2>
+                <div class="content-card">
+                    <p><b>What is GitHub?</b></p>
+                    <p><b>GitHub</b> is a cloud-based platform for hosting <b>Git</b> repositories. It allows developers to collaborate, track changes, and manage projects.</p>
+                    <p>So far, we've created a <b>local repository</b> on our machines, but this is only accessible by us. To make the files available for everyone working simultaneously on a project, we need to push our files to a <b>remote</b> repository.</p>
+                    <p>Let's take a look at how to do this.</p>
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Create a GitHub account</li>
+                        <li>Create a remote repository on GitHub</li>
+                        <li>Link our local repository to the remote repository</li>
+                        <li>Push files and changes from the local repository to the remote repository</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-step active" id="setup">
+                <span class="step-indicator">Step 1 of 4</span>
+                <h2>Creating a GitHub Account</h2>
+                <div class="content-card">
+                    <p>Set up your <b>GitHub</b> account by following this link - <a href="https://github.com">GitHub Set Up</a></p>
+                      <ul>
+                        <li>Click on the <b>‘+’</b> symbol in the top right corner</li>
+                        <li>Give your repository a name and a description</li>
+                        <li>Set your repository to <b>'Private'</b> for now as this is just an individual task</li>
+                        <li>Do not initialise the repository with a README</li>
+                        <li>Click <b>'Create repository'</b></li>
+                      </ul>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/github_setup.gif">
+                </div>
+            </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 4</span>
+                <h2>Linking a Local and Remote Repository</h2>
+                <div class="content-card">
+                    <p>We're now going to link our <b>local</b> GitHub repository with the <b>remote</b> repository we've just created.<p>
+                    <p>We're now going to change the state of the file by adding text to it, and then saving it in another commit.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>notepad exercise_1_questions.txt</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <p>This opens the file with Notepad</p>
+                    </div>
+                    <p>Now go ahead and answer questions <b>1-3</b> on the file, save it (Ctrl + S), and then close the file.</p>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/trivia_questions.png">
+                    </div>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 3 of 4</span>
+                    <h2>Stage The Recent Change</h2>
+                    <div class="content-card">
+                        <p>It's good practice to make frequent commits in Git at logical points of the development process.<p>
+                        <p>These can be small and focused changes such as after completing a specific task, or fixing a bug.</p>
+                        <p>Taking what we've learnt in the last lesson about staging a file, let's add the modified <b>exercise_1_questions</b> file into the staging area.</p>
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git add .</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <p>Remember that the full stop after the add command will stage all modified files.</p>
+                        </div>
+                        <p><b>Note:</b> You can put a full stop after git add to specify you want <b>all files with modifactions</b> made to them to be tracked, rather than listing them individually</p>
+                </div>
+            </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 4 of 5</span>
+                <h2>Commit The Change</h2>
+                <div class="content-card">
+                    <p>A good commit message is <b>essential</b> for maintaining clarity and understanding in your project, especially when working in teams or revisiting code in the future.<p>
+                    <p><b>What makes a good commit message?</b></p>
+                    <ul>
+                        <li><b>Clear and Descriptive:</b> Summarises <b>what</b> the change is</li>
+                        <li><b>Short Message:</b> Keep it brief (60 characters or less), but provide enough context</li>
+                        <li><b>Focus on a Single Change:</b> Each commit should represent <b>one</b> logical change. If it doesn't, then you should probably make more than one commit</li>
+                    </ul>
+                    <p>Now that we've taken a look at some best practices for commit messages, let's create one ourselves.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git commit -m"Added answers to questions 1-3 on exercise_1_questions.txt" </code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/commit_trivia.gif">
+                    </div>
+            </div>
+        </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 5 of 5</span>
+            <h2>Answer the Rest of The Questions and Commit the Changes</h2>
+            <div class="content-card">
+                <p>Now that we've made some changes to the file and committed these changes, go ahead and answers questions <b>4</b> and <b>5</b> on the file, and then stage and commit the file as usual.</p>
+                <p><b>Tip: </b>Don't forget to save (Ctrl + S) and close the file before staging it.</p>
+                <div class="step-content">
+                    <p>Run the following commands in Git Bash</p>
+                    <div class="command-block">
+                        <code>notepad exercise_1_questions.txt</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="command-block">
+                        <code>git add .</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="command-block">
+                        <code>git commit -m"Added answers to questions 4 and 5 on exercise_1_questions.txt"</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, we've learned that a Git <b>commit</b> is a snapshot of changes made to a project, allowing us to track and manage progress over time. We've also taken a look at what makes a good <b>commit message</b> and how you can craft one. In the next lesson, we'll learn how using commits allows us to revert to previous states of the project.</p>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev" disabled>&larr; Previous</button>
+                <div class="step-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="nav-arrow next">Next &rarr;</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Git Basics</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-1.1.html"><span class="step-number">1.1</span> Creating and Initialising a Local Repository</a></li>
+                    <li class="active"><a href="exercise-1.2.html"><span class="step-number">1.2</span> Staging a Change</a></li>
+                    <li><a href="exercise-1.3.html"><span class="step-number">1.3</span> Committing a Change</a></li>
+                    
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>1.4 Modifying Commits</h2>
+                <div class="content-card">
+                    <p>So far, we've made three commits to our local repository. The first was our initial commit, in the second commit we answered questions 1-3 on the .txt file and in the third commit, we answered questions 4 and 5.</p>
+                    <p>What if we wanted to <b>edit</b> one of those previous commits?</p>
+                    <p>Being able to edit a commit in Git is useful for maintaining a <b>clear</b> and <b>accurate</b> project history. It helps ensure that your commits are well-structured, meaningful and free from error.</p>
+                    <p>To edit a specific commit in Git, you have a few options depending on whether it's the <b>most recent commit</b> or an <b>earlier commit</b>.</p>
+
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Understand the importance of editing commits</li>
+                        <li>Use git commit --amend to modify the most recent commit</li>
+                        <li>Use git rebase to edit an older commit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-step active" id="setup">
+                <span class="step-indicator">Step 1 of 4</span>
+                <h2>Modifying the most recent commit</h2>
+                <div class="content-card">
+                </div>
+                <p>Let's imagine we made a mistake in the message of our most recent commit. We can use the git --amend command modify this.</p>
+                <p>Similar to the commit command, we can use the flag <b>-m</b> to specify a new commit message.</p>
+                <div class="step-content">
+                    <p>Run the following command in Git Bash</p>
+                    <div class="command-block">
+                        <code>git commit --amend -m"Answered questions 4 and 5 on Trivia file"</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/ammend_trivia.gif">
+                </div>
+                <p>By default, the ammend flag will edit the <b>most recent</b> commit.</p>
+            </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 4</span>
+                <h2>Verify The New Commit Message</h2>
+                <div class="content-card">
+                    <p>Now that we've changed the commit message of our <b>most recent</b> commit, how can we verify that it was modified?<p>
+                    <p>This is where the git log command comes in.</p>
+                    <p>git log shows the commit history of a repository, allowing you to view past commits along with details like commit messages, authors, timestamps, and commit SHAs.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git log</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    <p>As you can see, <span class="code-text">git log</span> shows a list of commits in chronological order including the SHA, author, date of the commit and the message.</p>
+                    <p>git commit --amend</p>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/git_log_verify.png">
+                    </div>
+                    <p>This is the most basic git log command. We can use additional flags with this command to retrieve specific information about a commit. We'll be taking a further look at these in later lessons.</p>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 3 of 4</span>
+                    <h2>Modifying Files in a Previous Commit</h2>
+                    <div class="content-card">
+                        <p>Let's take a look at how to edit contents of a file from a previous commit that wasn't the most recent one.<p>
+                        <p>After runing git log, we can see that every commit has a <b>SHA</b> which uniquely identifies that commit. We can use this <b>SHA</b> to target a specific commit we want to modify.</p>
+                        <p>We'll edit the commit where we answered questions <b>1-3</b>.</p>
+                        <ul>
+                            <li>Open the exercise_1_questions.txt file in Notepad</li>
+                            <li>Edit the file. For simplciity, we'll just put the word 'The' in front of the first answer.</li>
+                            <li>Save (Ctrl + S) and close Notepad.</li>
+                        </ul>
+                        <div class="image-container">
+                            <img class="git_gif" src="images/edit_trivia.gif">
+                        </div>
+                        <ul>
+                            <li>Now we need to retrieve the <b>SHA</b> of the commit where we answered the first three questions</li>
+                        </ul>
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git log</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <div class="command-block">
+                                <code>git rebase -i HEAD~2</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Copy the <b>whole SHA</b> of the specified commit.</li>
+                        </ul>
+                        <p><b>Note:</b> Your <b>SHA</b> will be different from mine because they're all unique.</p>
+                </div>
+            </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 4 of 5</span>
+                <h2>Commit The Change</h2>
+                <div class="content-card">
+                    <p>A good commit message is <b>essential</b> for maintaining clarity and understanding in your project, especially when working in teams or revisiting code in the future.<p>
+                    <p><b>What makes a good commit message?</b></p>
+                    <ul>
+                        <li><b>Clear and Descriptive:</b> Summarises <b>what</b> the change is</li>
+                        <li><b>Short Message:</b> Keep it brief (60 characters or less), but provide enough context</li>
+                        <li><b>Focus on a Single Change:</b> Each commit should represent <b>one</b> logical change. If it doesn't, then you should probably make more than one commit</li>
+                    </ul>
+                    <p>Now that we've taken a look at some best practices for commit messages, let's create one ourselves.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git commit -m"Added answers to questions 1-3 on exercise_1_questions.txt" </code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/commit_trivia.gif">
+                    </div>
+            </div>
+        </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 5 of 5</span>
+            <h2>Answer the Rest of The Questions and Commit the Changes</h2>
+            <div class="content-card">
+                <p>Now that we've made some changes to the file and committed these changes, go ahead and answers questions <b>4</b> and <b>5</b> on the file, and then stage and commit the file as usual.</p>
+                <p><b>Tip: </b>Don't forget to save (Ctrl + S) and close the file before staging it.</p>
+                <div class="step-content">
+                    <p>Run the following commands in Git Bash</p>
+                    <div class="command-block">
+                        <code>notepad exercise_1_questions.txt</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="command-block">
+                        <code>git add .</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="command-block">
+                        <code>git commit -m"Added answers to questions 4 and 5 on exercise_1_questions.txt"</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, we've learned that a Git <b>commit</b> is a snapshot of changes made to a project, allowing us to track and manage progress over time. We've also taken a look at what makes a good <b>commit message</b> and how you can craft one. In the next lesson, we'll learn how using commits allows us to revert to previous states of the project.</p>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev" disabled>&larr; Previous</button>
+                <div class="step-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="nav-arrow next">Next &rarr;</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
