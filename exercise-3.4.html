@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Forking & Cloning a Repository, Git Log Command, Version Tags and Branches</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
+                    <li><a href="exercise-3.2.html"><span class="step-number">3.2</span> Cloning a Forked Repository</a></li>
+                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Commands</a></li>
+                    <li  class="active"><a href="exercise-3.4.html"><span class="step-number">3.4</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Tagging</a></li>
+                    <li><a href="exercise-3.6.html"><span class="step-number">3.6</span> Branches</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="setup">
+                <h2>3.4 Git Log Continued</h2>
+                <div class="content-card">
+                    <p>So far, you've <b>cloned</b> a repository onto your local machine and learned about the different <b>git log</b> commands we can use.</p>
+                    <p>In this section of the exercise, you're going to be inserting text into the HTML file and create your own "About You" blog. You <b>don't</b> need any knowledge of web development to complete this exercise.</p>
+                    <p>Then we'll use some of the git log commands to see your commit history.</p>
+            
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Use git log to view the commit history and track changes in the repository</li>
+                        <li>Edit your own personal blog and track changes using commits and pushes</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 1 of 12</span>
+                <h2>Open the index.html File</h2>
+                <p>You can either run the following code in the <b>Git Bash</b> terminal as a shortcut to open the code or, you can find the file in your <b>File Explorer</b>.</p>
+                <p><b><span style="color: #50bcc4;">Path to find the index.html file:</span></b> "C:\Users\YourName\git-exercises\git-exercise-02\index.html"</p>
+                <p>Right click on the <b>index.html</b> file and open it with your preferred <b>code editor</b>.</p>
+                
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>code .</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 2 of 12</span>
+            <h2>Insert Your Name</h2>
+            <p>Insert your name where it says ‘Name’ inside the p tag on <b>line 26</b> and <b>save the file</b> (Ctrl + S).</p>
+            <div class="image-container">
+                <img class="git_gif" src="images/insert_name.gif">
+            </div>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 12</span>
+                <h2>Look At Your Changes in a Web Browser</h2>
+                <p>Now that we've inserted our name on <b>line 26</b>, we should be able to see these changes in our website.</p>
+                <ul>
+                    <li>Navigate to your <b>git-exercise-02</b> folder on your machine using File Explorer</li>
+                    <li>Right click on the <b>index.html</b> file</li>
+                    <li>Open with your preferred browser</li>
+                </ul>
+                <div class="image-container">
+                    <img class="git_gif" src="images/name_change.png">
+                </div>
+                <p class="lesson-description"><b><span style="color: #50bcc4;">Tip:</span></b> Is your name not showing up? Make sure you've <b>saved</b> the file (Ctrl + S) after editing <b>before</b> refreshing the web page.</p>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 4 of 12</span>
+                    <h2>git status</h2>
+                    <p>Remember, use <b>git status</b> as often as you can. It will help you to track your uncommitted changes and understand how the files are being tracked.</p>
+                    <p>Now that we've made a change and running <b>git status</b> has told us the change hasn't been staged yet, let's go ahead and add it to the <b>staging index</b>.</p>
+                    <div class="content-card">
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git add .</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="exercise-step" id="init">
+                        <span class="step-indicator">Step 5 of 12</span>
+                        <h2>Committing The Change</h2>
+                        <p>With each change we make, even if it's small, we must still create a commit.</p>
+                        <div class="content-card">
+                            <div class="step-content">
+                                <p>Run the following commands in Git Bash</p>
+                                <div class="command-block">
+                                    <code>git commit -m"Added first name"</code>
+                                    <button class="copy-btn">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p>If we need to be specifying <b>multiple changes</b> in the commit message, this is a sign that they should be part of <b>multiple commits</b>.</p>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 6 of 12</span>
+                    <h2>Use git log to Look at Recent Commits</h2>
+                    <p><b><span style="color: #50bcc4;">Test:</span></b> Using what we learnt about the <b>git log</b> command in the previous lesson, what should we run in Git Bash if we wanted to see the <b>branch name</b>, <b>SHA</b>, and the <b>commit message</b>?</p>
+                    <p><b><span style="color: #50bcc4;">Hint:</span></b> There's <b>two</b> commands you can run to get this output. Take a look at the last lesson if you need a reminder.</p>
+                    <p>Below is the expected output from Git Bash</p>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/git_log_output.png">
+                    </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 7 of 12</span>
+                <h2>Push the Change to GitHub</h2>
+                <p>Now that we've modified files in our local repository, let's push this to the remote GitHub repository.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git push origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/commit_name.png">
+                </div>
+                <p>Your GitHub repository should be updated with the most recent commit.</p>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 8 of 12</span>
+            <h2>Making Additional Changes</h2>
+            <p>Let's go ahead and change more aspects of your blogs, makes more commits and push them with each new feature.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <ul>
+                        <li>Go back to your code editor</li>
+                        <li>Open the <b>app.css</b> file located in the <b>explorer</b> on the left</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="git_gif" src="images/css.gif">
+            </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 9 of 12</span>
+            <h2>Changing the Background Colour</h2>
+            <p>To make it easier to visually see what changes we're making, go ahead and change the background to any colour of your choosing. You can either use a <b>HEX code</b> or, type in a simple colour.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <ul>
+                        <li>In the <b>app.css</b> file, locate <b>line 4</b> which says <b>background-color</b></li>
+                        <li>Insert any colour <b>inbetween</b> the colon and semi-colon</li>
+                        <li>Save the change (Ctrl + S)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="git_gif" src="images/background_colour.gif">
+            </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 10 of 12</span>
+            <h2>Verify the Changes</h2>
+            <p>It's good practice to make sure your changes are being implemented as you go along.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <ul>
+                        <li>Go back to the web browser that has your blog and refresh the page</b></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="git_gif" src="images/blog_background.png">
+            </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 11 of 12</span>
+            <h2>Stage, Commit, Push</h2>
+            <p>Now that we've modified another feature, it's time to <b>stage the change</b>, <b></b>, then <b>push</b> it to your <b>GitHub repository</b>.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git add .</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="command-block">
+                            <code>git commit -m"Changed the background colour"</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="command-block">
+                            <code>git push origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 12 of 12</span>
+            <h2>Finishing The Blog</h2>
+            <p>So far, you've learnt how to <b>edit lines of code</b> to insert your information, <b>stage</b>, <b>commit</b> and <b>push</b> your changes to your <b>GitHub repository</b>. Now it's time to finish the rest of your personal blog.</p>
+            <p>The sections left to fill out are your <b>Job Role</b>, <b>Dream Holiday Destination</b>, <b>Favourite Hobby</b>, <b>Favourite Food</b> and <b>Favourite Drink</b>. You can also add an <b>image of yourself</b> if you have one!</p>
+            <p>Now you can go ahead to this <b>independently</b>.</p>
+            <div class="content-card">
+                <p class="lesson-description"><b><span style="color: #50bcc4;">Tip:</span></b> Make <b>one</b> change at a time, <b>verify</b> the change was successfully implemented, <b>stage</b>, <b>commit</b> and <b>push</b> the change.</p>
+                <p>You can go back through the lesson if you need a refresher of the steps.</p>
+            </div>
+
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, you learned how to <b>fork</b> and <b>clone</b> a repository, bringing a copy of a remote project onto your local machine. You modified an HTML file, inserted personal details, and verified the changes in a web browser. Using <b>git status</b>, you tracked uncommitted changes before <b>staging</b> and <b>committing</b> them. You then <b>pushed</b> these updates to GitHub, ensuring your remote repository was up to date. This reinforced the importance of small, frequent commits for version control.</p>
+        </div>
+    </div>
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev"><a href="exercise-3.3.html">&larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-3.5.html">Next &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

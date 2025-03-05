@@ -11,14 +11,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../exercises.html">Exercises</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
             </ul>
         </div>
     </nav>
@@ -36,11 +36,12 @@
                     <span class="progress-text">0/4 Steps</span>
                 </div>
                 <ul class="exercise-nav">
-                    <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
-                    <li class="active"><a href="exercise-3.2.html"><span class="step-number">3.2</span> Git Log Commands</a></li>
-                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Continued</a></li>
-                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Tagging</a></li>
-                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Branches</a></li>
+                    <li class="active"><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
+                    <li><a href="exercise-3.2.html"><span class="step-number">3.2</span> Cloning a Forked Repository</a></li>
+                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Commands</a></li>
+                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Tagging</a></li>
+                    <li><a href="exercise-3.6.html"><span class="step-number">3.6</span> Branches</a></li>
                 </ul>
             </div>
         </aside>
@@ -51,17 +52,14 @@
             <div class="exercise-step" id="init">
                 <h2>3.1 Forking & Cloning a Remote Repository</h2>
                 <div class="content-card">
-                    <p>Cloning a repository from GitHub means creating a copy of a remote repository on your local machine. This allows you to work on the project, make changes, and later push updates back to GitHub.</p>
-                    <p>Why clone a repository?</p>
-
+                    <p><b>Cloning</b> a repository from GitHub means creating a copy of a remote repository on your local machine. This allows you to work on the project, make changes, and later push updates back to GitHub.</p>
+                    <p><b><span style="color: #50bcc4;">Why Clone a Repository?</span></b></p>
                     <ul>
                         <li><b>Work Offline -</b> You can make changes to a project without needing access to the internet</li>
                         <li><b>Collaboration -</b> Teams can work simulteanously on the same project by cloning the same repository</li>
                         <li><b>Backup & Version Control -</b> You can get a full version history of the project on your local machine</li>
                         <li><b>Save Time -</b> You can clone starter code for projects instead of setting everything up manually</li>
                     </ul>
-
-                    <p class="lesson-description">But if we all want to clone the same repository but have our own copies that wont affect each others, we need to <b>fork</b> the repository. This will create a copy of the repository under your individual GitHub accounts. After forking the repository, we then need to clone it to ensure that any changes we push to GitHub won't affect the original repository.</p>
 
                     <div class="image-container">
                         <img class="git_gif" src="images/github_fork_clone.webp">
@@ -76,65 +74,78 @@
                         <li>Learn how to make changes in a cloned repository and push them back to the remote repository</li>
                         <li>Use git log to view the commit history and track changes in the repository</li>
                     </ul>
-                    <p class="lesson-description">Let's start by cloning the training website so we can access it locally.</p>
+                    <p class="lesson-description">Let's start by <b>cloning</b> the training website so we can access it locally.</p>
                 </div>
             </div>
 
             <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 1 of 2</span>
-                <h2>Creating a GitHub Account</h2>
-                <div class="content-card">
-                    <p>Set up your <b>GitHub</b> account by following this link - <a href="https://github.com">GitHub Set Up</a></p>
-                </div>
-            </div>
-
-            <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 2 of 2</span>
-                <h2>Creating a Repository</h2>
-                      <ul>
-                        <li>Click on the <b>‘+’</b> symbol in the top right corner</li>
-                        <li>Give your repository a name and a description</li>
-                        <li>Set your repository to <b>'Private'</b> for now as this is just an individual task</li>
-                        <li>Do not initialise the repository with a README</li>
-                        <li>Click <b>'Create repository'</b></li>
-                      </ul>
+                <span class="step-indicator">Step 1 of 4</span>
+                <h2>Copy the GitHub Repository URL</h2>
+                <p></p>
+                <ul>
+                    <li>Follow this link to the repository we're going to clone - <a href="https://github.com/rockborne-git-training/git-github-website">Training Website</a></li>
+                    <li>Click on the green button that says <b><> Code</b></li>
+                    <li>Copy the link</li>
+                </ul>
                 </div>
                 <div class="image-container">
-                    <img class="git_gif" src="images/github_setup.gif">
+                    <img class="git_gif" src="images/copy_link.gif">
                 </div>
 
-                <div class="table-content"
-                <h3>Why wouldn't we initialise the repository with a README?</h3>
-                <p>Whether or not to initialise a repository with a <b>README</b> file depends on the use case. Here's some reason why you might choose <b>not</b> to initialise a repository.</p>
-                <table>
-                    <tr>
-                        <th>When to Initialise with README</th>
-                        <th>When NOT to Initialise with README</th>
-                    </tr>
-                    <tr>
-                        <td>You are starting a new project from scratch</td>
-                        <td>You are pushing an existing project to the repo</td>
-                    </tr>
-                    <tr>
-                        <td>You want the repo to be easily browsable on GitHub</td>
-                        <td>You are setting up a bare repository</td>
-                    </tr>
-                    <tr>
-                        <td>The project is open-source and needs documentation from the start</td>
-                        <td>Your team prefers to add the README in the first meaningful commit</td>
-                    </tr>
-                    <tr>
-                        <td>You want contributors to understand the project immediately</td>
-                        <td>The project structure requires manual file organization first</td>
-                    </tr>
-                </table>
-                <p>In our case, we want to <b>push an existing project to the repository</b>, so we won't intialise it with a README.</p>
-            </div>
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 4</span>
+                <h2>Clone The Repository</h2>
+                <p>Now that we've copied the link to the website repository, we can use this to clone a copy of it on our local machines using Git Bash.</p>
+                <div class="content-card">
+                    
+                    <p class="lesson-description"><b><span style="color: #50bcc4;">Note:</span></b> Make sure you're in the <b>git-exercises</b> working directory in Git Bash. You can use the <b>cd</b> command to navigate out of your current directory.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git clone https://github.com/rockborne-git-training/git-github-website.git</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/cloning_website.gif">
+                    </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 4</span>
+                <h2>Find the Cloned Repository on Your Machine</h2>
+                <ul>
+                    <li>In your <b>File Explorer</b>, search for your <b>git-exercises</b> folder</li>
+                    <li>You should be able to see the cloned <b>git-github-website</b> repository</li>
+                </ul>
+                <div class="content-card">
+                    <div class="step-content">
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/website_clone.png">
+                    </div>    
+                    
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 4 of 4</span>
+                <h2>Open the index.html File</h2>
+                <p>Even though we won't be doing this on this repository, developers can now work collaboratively on the same code by pushing and pulling changes to and from the remote repository.</p>
+                <p>The next step for us is to open the website in a web browser so you can follow along with the rest of the course.</p>
+                <ul>
+                    <li>Double click on the <b>git-github-website</b> folder</li>
+                    <li>Right click on the <b>index.html</b> file</li>
+                    <li>Open the file with your preferred web browser</li>
+                </ul>
+                <div class="content-card">
+                    <div class="step-content">
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/opening_website.gif">
+                    </div> 
+
 
                 <div class="lesson-summary">
                     <h3><span style="color: #f08404;">Lesson Summary</span></h3>
                 </div>
-                <p>In this lesson, we created a GitHub account, set up a remote repository, and learned when to initialise with a README or not. In the next lesson, we'll be linking our local repo with the remote repo.</p>
+                <p>In this lesson, we learned how to <b>clone a remote repository </b>to our local machines using the git clone command. Cloning creates a copy of the repository on our local system, allowing us to work on it offline. We can then make changes, commit them, and later push the changes back to the remote repository for collaboration.</p>
         </div>
     </div>
 
@@ -144,13 +155,7 @@
             <!-- Navigation Arrows -->
             <div class="exercise-navigation">
                 <button class="nav-arrow prev" disabled>&larr; Previous</button>
-                <div class="step-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="nav-arrow next">Next &rarr;</button>
+                <button class="nav-arrow next"><a href="exercise-3.2.html"> Next &rarr;</a></button>
             </div>
         </main>
     </div>

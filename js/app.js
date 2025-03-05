@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navigation toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+    
 
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightCurrentLesson() {
         const navItems = document.querySelectorAll('.exercise-nav li a'); // Select <a> inside <li>
         const currentPage = window.location.pathname.split('/').pop(); // Get current page filename
-
+        
         // Remove 'active' from all items
         navItems.forEach(item => item.parentElement.classList.remove('active'));
 
@@ -31,14 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Exercise page-specific code for navigating steps
     const exerciseContent = document.querySelector('.exercise-content');
     if (exerciseContent) {
-        const steps = Array.from(document.querySelectorAll('.exercise-step'));
-        const dots = Array.from(document.querySelectorAll('.dot'));
-        const prevBtn = document.querySelector('.nav-arrow.prev');
-        const nextBtn = document.querySelector('.nav-arrow.next');
+        const steps = Array.from(document.querySelectorAll('.step-number'));
+        // const dots = Array.from(document.querySelectorAll('.dot'));
+        // const prevBtn = document.querySelector('.nav-arrow.prev');
+        // const nextBtn = document.querySelector('.nav-arrow.next');
         const navItems = document.querySelectorAll('.exercise-nav li');
         const progressBar = document.querySelector('.progress-bar');
         const progressText = document.querySelector('.progress-text');
-        let currentStep = 0;
+        const index = Number(window.location.pathname.split('/').pop().split(".")[1]) - 1; // Get current page filename
+        console.log(index);
+        // let currentStep = 0;
 
         // Update progress bar
         function updateProgress(index) {
@@ -50,47 +53,47 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update active step
         function updateStep(index) {
             steps.forEach(step => step.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+            // dots.forEach(dot => dot.classList.remove('active'));
             navItems.forEach(item => item.classList.remove('active'));
             
             steps[index].classList.add('active');
-            dots[index].classList.add('active');
+            // dots[index].classList.add('active');
             navItems[index].classList.add('active');
             
-            prevBtn.disabled = index === 0;
-            nextBtn.disabled = index === steps.length - 1;
+            // prevBtn.disabled = index === 0;
+            // nextBtn.disabled = index === steps.length - 1;
             
-            currentStep = index;
+            // currentStep = index;
             updateProgress(index);
         }
 
         // Navigation click handlers for steps (no page switching here)
-        prevBtn.addEventListener('click', () => {
-            if (currentStep > 0) {
-                updateStep(currentStep - 1);
-            }
-        });
+        // prevBtn.addEventListener('click', () => {
+        //     if (currentStep > 0) {
+        //         updateStep(currentStep - 1);
+        //     }
+        // });
 
-        nextBtn.addEventListener('click', () => {
-            if (currentStep < steps.length - 1) {
-                updateStep(currentStep + 1);
-            }
-        });
+        // nextBtn.addEventListener('click', () => {
+        //     if (currentStep < steps.length - 1) {
+        //         updateStep(currentStep + 1);
+        //     }
+        // });
 
         // Sidebar navigation for steps (no page switching here)
-        navItems.forEach((item, index) => {
-            item.addEventListener('click', (e) => {
-                // e.preventDefault();  // Prevent page switch only for step navigation
-                updateStep(index);
-            });
-        });
+        // navItems.forEach((item, index) => {
+        //     item.addEventListener('click', (e) => {
+        //         // e.preventDefault();  // Prevent page switch only for step navigation
+        //         updateStep(index);
+        //     });
+        // });
 
         // Dots navigation for steps
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                updateStep(index);
-            });
-        });
+        // dots.forEach((dot, index) => {
+        //     dot.addEventListener('click', () => {
+        //         updateStep(index);
+        //     });
+        // });
 
         // Copy button functionality
         const copyButtons = document.querySelectorAll('.copy-btn');
@@ -106,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Initialize first step
-        updateStep(0);
+        // Initialize page step
+        updateStep(index);
     }
 });

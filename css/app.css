@@ -1,3 +1,5 @@
+
+
 :root {
     --primary-color: #18143c;  /* Main color */
     --secondary-color: #594e7f; /* Adjusted secondary color */
@@ -88,7 +90,7 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    color: #e72b77;
+    color: white;
     font-weight: 600;
 }
 
@@ -103,21 +105,23 @@ body {
 }
 
 .btn-primary {
-    background: var(--white);
-    color: var(--dark-color);
+    background: transparent;
+    color: #e72b77;
+    border: 2px solid #e72b77;
+    margin-left: 1rem;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: #e72b77;
+    border: 2px solid #e72b77;
     margin-left: 1rem;
 }
 
 /* Features Section */
 .features {
     padding: 5rem 2rem;
-    background: white;
+    background: #faf9fd;
 }
 
 .features h2 {
@@ -466,6 +470,10 @@ tr:nth-child(even) {
 
 .sidebar-content {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 50px); /* Adjust based on your layout */
+    overflow-y: auto;
 }
 
 .sidebar-content h3 {
@@ -666,9 +674,14 @@ tr:nth-child(even) {
 }
 
 .nav-arrow:hover:not(:disabled) {
-    background: var(--primary-color);
+    background: #E0F5F7;
     color: var(--white);
     border-color: var(--primary-color);
+}
+
+.nav-arrow a {
+    color: var(--dark-color);
+    text-decoration: none;
 }
 
 .nav-arrow:disabled {
@@ -782,6 +795,8 @@ tr:nth-child(even) {
     .exercise-sidebar {
         transform: translateX(-100%);
         z-index: 100;
+        max-height: 100vh; /* Prevents it from going beyond the screen */
+        overflow-y: auto;
     }
 
     .exercise-sidebar.active {

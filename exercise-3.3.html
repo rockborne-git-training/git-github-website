@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Forking & Cloning a Repository, Git Log Command, Version Tags and Branches</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
+                    <li><a href="exercise-3.2.html"><span class="step-number">3.2</span> Cloning a Forked Repository</a></li>
+                    <li class="active"><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Commands</a></li>
+                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Tagging</a></li>
+                    <li><a href="exercise-3.6.html"><span class="step-number">3.6</span> Branches</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="setup">
+                <h2>3.3 Git Log Commands</h2>
+                <div class="content-card">
+                    <p><b><span style="color: #50bcc4;">Git Log</span></b> keeps track of every change made to a repository, and the <b>git log</b> command allows us to explore the history. You can find an old commit, see who made a change, and understand the development of a project using <b>git log</b>.</p>
+                    <p>In this section, we'll cover different ways to use <b>git log</b> to efficiently navigate your project's history and find exactly what you need.</p>
+            
+                    <p class="lesson-description"><b><span style="color: #50bcc4;">Different git log commands:</span></b></p>
+                    <ul>
+                        <li>git log</li>
+                        <li>git log --oneline</li>
+                        <li>git log --decorate</li>
+                        <li>git log --stat</li>
+                        <li>git log -p</li>
+                        <li>git log --author</li>
+                    </ul>
+            
+                    <p class="lesson-description">Let's start exploring some of these.</p>
+            
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Use git log to view the commit history and track changes in the repository</li>
+                        <li>Understand the different flags you can use with the git log command</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 1 of 6</span>
+                <h2>git log</h2>
+                <p>This is the most basic git log command.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git log</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/git_log.gif">
+                  </div>
+                  <p>As you can see, git log shows a list of commits in <b>chronological order</b> including the <b>SHA</b>, <b>author</b>, <b>date of the commit</b> and the <b>message</b>.</p>
+
+            <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 2 of 6</span>
+            <h2>git log --oneline</h2>
+            <p>You may notice in Gat Bash that you haven't returned to the normal command line which starts with '<b>$</b>'. Instead, there's a colon. This is because when you run git log, Git opens the commit history inside a pager called less. This allows you to scroll through the output instead of flooding the terminal with too much information at once.</p>
+            <p class="lesson-description"><b><span style="color: #50bcc4;">How to exit log mode?</span></b></p>
+            <p>Press <b>q</b> on your keyboard to quit and return to the normal command line.</p>
+            <p>Now let's explore the use of git log --oneline</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <p>Run the following command in Git Bash</p>
+                    <div class="command-block">
+                        <code>git log --oneline</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="git_gif" src="images/git_log_oneline.gif">
+            </div>
+            <p>By running this command, we get the <b>SHA</b> of the commit and the <b>message</b> attached to it. This is useful when wanting a quick overview of commit history.</p>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 6</span>
+                <h2>git log --decorate</h2>
+                <p>Now try running git log --decorate.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git log --decorate</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <p>You may notice that you get the same output as running git log.</p>
+                <p>This is because modern versions of Git often enable decoration by default. However, the key different is that git log --decorate explicitly ensures that branch names, tags and references are always displayed, even if they aren't shown by default in git log.</p>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 4 of 6</span>
+                    <h2>git log --stat</h2>
+                    <p>Now try running git log --stat.</p>
+                    <div class="content-card">
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git log --stat</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p>git log --stat will show the commit SHA, commit message and a summary of the file changes, inluding:</p>
+                    <ul>
+                        <li>The name of each file modified</li>
+                        <li>The number of lines added or deleted in each file</li>
+                        <li>The summary of total changes in the commit</li>
+                    </ul>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/git_log_stat.gif">
+                    </div>
+                    <p>It's a quick way to see which files were modified and whether the changes were mostly additions or deletions.</p>
+
+                    <div class="exercise-step" id="init">
+                        <span class="step-indicator">Step 5 of 6</span>
+                        <h2>git log -p</h2>
+                        <div class="content-card">
+                            <div class="step-content">
+                                <p>Run the following command in Git Bash</p>
+                                <div class="command-block">
+                                    <code>git log -p</code>
+                                    <button class="copy-btn">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img class="git_gif" src="images/git_log_p.gif">
+                        </div>
+                        <p>git log -p will show the <b>full changes for each commit</b> in the repository.</p>
+                        <p>This means it will show exactly what lines were <b>added</b>, <b>modified</b>, or <b>deleted</b> for each commit.</p>
+                        <p>After running log -p, we can see that one line of code was added in the last commit (highlighted in green).</p>
+                        <ul>
+                            <li>Added lines are prefixed with a <b>+</b>.</li>
+                            <li>Removed lines are prefixed with a <b>-</b>.</li>
+                        </ul>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 6 of 6</span>
+                    <h2>git log --author</h2>
+                    <p>This command lets you filter out commits by specifying the author of a commit.</p>
+                    <div class="content-card">
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git log --author="Mary"</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/git_log_author.gif">
+                    </div>
+                    <p>The author's name can be <b>full</b> or <b>partial</b>, or an <b>email address</b>, and Git will match commits based on this.</p>
+                    <p>By default, this command is also <b>case sensitive</b>. You can make it case-insensitive by adding the --regexp-ignore-case flag after the command.</p>
+
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, we covered different ways we can use the <b>git log</b> command to find exactly what you need in a projects commit history. There are several other ways you can use this command, but we wont be needing those in lessons ahead. In the next lesson, we'll be making commits to the index.html file and using these <b>git log</b> commands to display our changes.</p>
+        </div>
+    </div>
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev"><a href="exercise-3.2.html">&larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-3.4.html">Next &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -11,14 +11,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../exercises.html">Exercises</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
             </ul>
         </div>
     </nav>
@@ -37,10 +37,11 @@
                 </div>
                 <ul class="exercise-nav">
                     <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
-                    <li class="active"><a href="exercise-3.2.html"><span class="step-number">3.2</span> Git Log Commands</a></li>
-                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Continued</a></li>
-                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Tagging</a></li>
-                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Branches</a></li>
+                    <li class="active"><a href="exercise-3.2.html"><span class="step-number">3.2</span> Cloning a Forked Repository</a></li>
+                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Commands</a></li>
+                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Tagging</a></li>
+                    <li><a href="exercise-3.6.html"><span class="step-number">3.6</span> Branches</a></li>
                 </ul>
             </div>
         </aside>
@@ -49,76 +50,110 @@
         <main class="exercise-content">
 
             <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 1 of 2</span>
-                <h2>Creating a GitHub Account</h2>
-                <div class="content-card">
-                    <p>Set up your <b>GitHub</b> account by following this link - <a href="https://github.com">GitHub Set Up</a></p>
-                </div>
-            </div>
-
-            <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 2 of 2</span>
-                <h2>Cloning the Training Website Repository</h2>
-                      <ul>
-                        <li>Click on the <b>‘+’</b> symbol in the top right corner</li>
-                        <li>Give your repository a name and a description</li>
-                        <li>Set your repository to <b>'Private'</b> for now as this is just an individual task</li>
-                        <li>Do not initialise the repository with a README</li>
-                        <li>Click <b>'Create repository'</b></li>
-                      </ul>
-                </div>
-                <div class="image-container">
-                    <img class="git_gif" src="images/github_setup.gif">
-                </div>
-
-                <div class="table-content"
-                <h3>Why wouldn't we initialise the repository with a README?</h3>
-                <p>Whether or not to initialise a repository with a <b>README</b> file depends on the use case. Here's some reason why you might choose <b>not</b> to initialise a repository.</p>
+                <h2>3.2 Cloning a Forked Repository</h2>
+                <p>If we all want to clone the same repository but have our own copies that wont affect each others, we need to <b>fork</b> the repository. This will create a copy of the repository under your individual GitHub accounts. After forking the repository, we then need to clone it to ensure that any changes we push to GitHub won't affect the original repository.</p>
                 <table>
                     <tr>
-                        <th>When to Initialise with README</th>
-                        <th>When NOT to Initialise with README</th>
+                        <th><b>Feature</b></th>
+                        <th>Cloning a Repository</th>
+                        <th>Cloning a Forked Repository</th>
                     </tr>
                     <tr>
-                        <td>You are starting a new project from scratch</td>
-                        <td>You are pushing an existing project to the repo</td>
+                        <td><b>Definition</b></td>
+                        <td>Copies a remote repository to your local machine.</td>
+                        <td>Copies a forked version of a repository to your local machine.</td>
                     </tr>
                     <tr>
-                        <td>You want the repo to be easily browsable on GitHub</td>
-                        <td>You are setting up a bare repository</td>
+                        <td><b>Ownership</b></td>
+                        <td>You do not own the original repository.</td>
+                        <td>You own the forked repository under your GitHub account.</td>
                     </tr>
                     <tr>
-                        <td>The project is open-source and needs documentation from the start</td>
-                        <td>Your team prefers to add the README in the first meaningful commit</td>
+                        <td><b>Making Changes</b></td>
+                        <td>Can contribute by creating branches and pull requests.</td>
+                        <td>Can freely make changes and later submit pull requests to the original repository.</td>
                     </tr>
                     <tr>
-                        <td>You want contributors to understand the project immediately</td>
-                        <td>The project structure requires manual file organization first</td>
+                        <td><b>Use Case</b></td>
+                        <td>Used when working within a shared project.</td>
+                        <td>Used when you want to modify a project independently before contributing back.</td>
                     </tr>
                 </table>
-                <p>In our case, we want to <b>push an existing project to the repository</b>, so we won't intialise it with a README.</p>
+                </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 1 of 4</span>
+                <h2>Forking a Repository on GitHub</h2>
+                <ul>
+                    <li>Open <a href="https://github.com/rockborne-git-training/git-exercise-02">this link</a> and click on <b>'Fork'</b> in the top right corner to create a new fork.</li>
+                  </ul>
+                  <div class="image-container">
+                    <img class="git_gif" src="images/github_fork.gif">
+                  </div>
+                  <ul>
+                    <li>Untick <b>‘copy the master branch only’</b>, because we want to copy all branches</li>
+                    <li>Click <b>‘Create Fork’</b></li>
+                    <li>Copy the forked repository URL</li>
+                  </ul>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 4</span>
+                <h2>Cloning The Forked Repository</h2>
+                <p>Cloning a forked repository follows the same process as cloning any other repository.</p>
+                <p class="lesson-description"><b><span style="color: #50bcc4;">Note:</span></b> Again, make sure you're in the <b>git-exercises</b> working directory in Git Bash. You can use the <b>cd</b> command to navigate out of your current directory.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git clone forked_repository_link</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    </div>   
+                    
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 4</span>
+                <h2>Open the index.html File</h2>
+                <ul>
+                    <li>Locate the <b>git-exercise-02</b> folder on your laptop</li>
+                    <li>Right click on the <b>index.html</b> file</li>
+                    <li>Open this with your preferred browser</li>
+                  </ul>
+                  <div class="image-container">
+                      <img class="git_gif" src="images/personal_blog.png">
+                  </div>
+
+            <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 4 of 4</span>
+            <h2>Opening the Files in a Code Editor</h2>
+            <p>You're going to be editing the code so that you can create a personal blog for yourself. This means that we need to open the HTML file in a code editor.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <p>Run the following command in Git Bash</p>
+                    <div class="command-block">
+                        <code>code .</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+            </div>   
+            <div class="image-container">
+                <img class="git_gif" src="images/vs_code.png">
             </div>
+
+
 
                 <div class="lesson-summary">
                     <h3><span style="color: #f08404;">Lesson Summary</span></h3>
                 </div>
-                <p>In this lesson, we created a GitHub account, set up a remote repository, and learned when to initialise with a README or not. In the next lesson, we'll be linking our local repo with the remote repo.</p>
+                <p>In this lesson, we explored <b>forking</b> and <b>cloning</b> a forked repository. In the next lesson, we're going to learn about the different <b>git log</b> commands to track previous file changes.</p>
         </div>
     </div>
-
-        
 
 
             <!-- Navigation Arrows -->
             <div class="exercise-navigation">
-                <button class="nav-arrow prev" disabled>&larr; Previous</button>
-                <div class="step-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="nav-arrow next">Next &rarr;</button>
+                <button class="nav-arrow prev"><a href="exercise-3.1.html"> &larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-3.3.html"> Next &rarr;</a></button>
             </div>
         </main>
     </div>

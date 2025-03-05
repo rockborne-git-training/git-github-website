@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Forking & Cloning a Repository, Git Log Command, Version Tags and Branches</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-3.1.html"><span class="step-number">3.1</span> Cloning a Remote Repository</a></li>
+                    <li><a href="exercise-3.2.html"><span class="step-number">3.2</span> Cloning a Forked Repository</a></li>
+                    <li><a href="exercise-3.3.html"><span class="step-number">3.3</span> Git Log Commands</a></li>
+                    <li><a href="exercise-3.4.html"><span class="step-number">3.4</span> Git Log Continued</a></li>
+                    <li><a href="exercise-3.5.html"><span class="step-number">3.5</span> Tagging</a></li>
+                    <li class="active"><a href="exercise-3.6.html"><span class="step-number">3.6</span> Branches</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step active" id="setup">
+                <h2>3.6 Branches</h2>
+                <p><b>Branches</b> are used to work on the same project, but in different isolated environments. By default, the first branch is named <b>‘master’</b>, and this is the one we’ve also been working on.</p>
+                <p>In this part of the lesson, we're going to be looking at how to identify branches, create new branches, and delete branches.</p>
+                </div>
+                <div class="image-container">
+                    <img class="git_branch" src="images/git_branch.png">
+                </div>
+                <p class="image-link"><a href="https://www.atlassian.com/git/tutorials/using-branches">https://www.atlassian.com/git/tutorials/using-branches</a></p>
+                <p class="lesson-description"><b><span style="color: #50bcc4;">Why Use Branches?</span></b></p>
+                <ul>
+                    <li><b>Isolate features & bug fixes: </b>Each branch is a seperate line of development. Developers can work on multiple features or bug fixes simultaneaously without interfering with the main branch</li>
+                    <li><b>Safe experimentation: </b>Developers can try new ideas in a branch without risking the stability of the main project. If the experiment doesn't work out, they can delete the branch without affecting the master branch</li>
+                    <li><b>Parallel Development: </b>Multiple developers can work on different branches at the same time and merge branches together after code reviews.</li>
+                </ul>
+            
+                <p> Let's take a look at how branches work</p>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 1 of 5</span>
+                <h2>Identify the Branch We're Currently On</h2>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git branch</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/git_branch.gif">
+                </div>
+                  <p>This command will list <b>all</b> the branches in the repository.</p>
+                  <p>The branch you're currently on will be denoted by an <b>asterisk</b> next to it and <b>highlighted in green</b>.</p>
+                  <p>You can use this command to show the branch that is currently <b>active</b>.</p>
+
+            <div class="exercise-step" id="init">
+            <span class="step-indicator">Step 2 of 5</span>
+            <h2>Creating a New Branch</h2>
+            <p>Let's say we wanted to create a navigation bar feature for our project. We don't want to create this feature on the <b>master</b> branch in case something goes wrong, so we'll create a new branch and <b>merge</b> it into the <b>master</b> branch later.</p>
+            <div class="content-card">
+                <div class="step-content">
+                    <p>Run the following command in Git Bash</p>
+                    <div class="command-block">
+                        <code>git branch nav-bar</code>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="git_gif" src="images/branch_nav_bar.gif">
+            </div>
+            <p>The git branch command will create a <b>new branch</b> and you specify the name of the new branch. In this case, we've called it <b>nav-bar</b>.</p>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 5</span>
+                <h2>Navigate Into the New Branch</h2>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git checkout nav-bar</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/checkout_nav_bar.gif">
+                </div>
+                  <p>The git checkout command is used to <b>switch</b> between branches</p>
+
+                <div class="exercise-step" id="init">
+                    <span class="step-indicator">Step 4 of 5</span>
+                    <h2>Using git log to See What Branch We're On</h2>
+                    <p>When we run the following command, the <b>HEAD</b> should be pointing to <b>nav-bar</b> instead of <b>master</b> because we’ve switched branches.</p>
+                    <div class="content-card">
+                        <div class="step-content">
+                            <p>Run the following command in Git Bash</p>
+                            <div class="command-block">
+                                <code>git log --decorate</code>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/decorate_nav_bar.gif">
+                    </div>
+
+                    <div class="exercise-step" id="init">
+                        <span class="step-indicator">Step 5 of 5</span>
+                        <h2>Deleting Branches</h2>
+                        <p>What if we wanted to <b>delete</b> the branch we just created?</p>
+                        <p>If we want to delete the branch we just made, we need to first <b>switch</b> branches, as you can’t delete a brunch you’re currently on.</p>
+                        <div class="content-card">
+                            <div class="step-content">
+                                <p>Run the following commands in Git Bash</p>
+                                <div class="command-block">
+                                    <code>git checkout master</code>
+                                    <button class="copy-btn">Copy</button>
+                                </div>
+
+                                <div class="command-block">
+                                    <code>git branch -d nav-bar</code>
+                                    <button class="copy-btn">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img class="git_gif" src="images/delete_nav.gif">
+                        </div>
+                      
+                          <p>We've <b>checked out</b> of the branch we want to delete and <b>switched back</b> to master. Then we used the <b>-d</b> flag to delete the <b>nav-bar</b> branch we just created.</p>
+
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p><b>Branches</b> make Git a powerful tool for managing development efficiently. They allow teams to work independently, experiment safely, and integrate changes smoothly, leading to better collaboration and a more structured workflow. In the next lesson, you're going to learn about <b>merging</b> and <b>merge conflicts</b>, as well as put everything you've learnt so far into practice with a <b>collaborative exercise</b>.</p>
+        </div>
+    </div>
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev"><a href="exercise-3.5.html">&larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-3.6.html">Click Here For Exercise 4 &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

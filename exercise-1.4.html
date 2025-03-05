@@ -11,14 +11,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png"></img>
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../exercises.html">Exercises</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
             </ul>
         </div>
     </nav>
@@ -37,9 +37,9 @@
                 </div>
                 <ul class="exercise-nav">
                     <li><a href="exercise-1.1.html"><span class="step-number">1.1</span> Creating and Initialising a Local Repository</a></li>
-                    <li class="active"><a href="exercise-1.2.html"><span class="step-number">1.2</span> Staging a Change</a></li>
+                    <li><a href="exercise-1.2.html"><span class="step-number">1.2</span> Staging a Change</a></li>
                     <li><a href="exercise-1.3.html"><span class="step-number">1.3</span> Committing a Change</a></li>
-                    
+                    <li class="active"><a href="exercise-1.4.html"><span class="step-number">1.4</span> Modifying Commits</a></li>
                 </ul>
             </div>
         </aside>
@@ -190,7 +190,7 @@
                 <div class="lesson-summary">
                     <h3><span style="color: #f08404;">Lesson Summary</span></h3>
                 </div>
-                <p>In this lesson, we've learned that a Git <b>commit</b> is a snapshot of changes made to a project, allowing us to track and manage progress over time. We've also taken a look at what makes a good <b>commit message</b> and how you can craft one. In the next lesson, we'll learn how using commits allows us to revert to previous states of the project.</p>
+                <p>In this lesson, we learned how to <b>modify Git commits</b> to ensure a clean and accurate project history. We started by understanding the importance of editing commits to keep them meaningful and error-free. Using the <b>git commit --amend</b> command, we modified the most recent commit's message, and verified the changes with <b>git log</b>. We also explored how to edit earlier commits using <b>git rebase -i</b>, targeting specific commits with their unique SHA.</p>
         </div>
     </div>
 
@@ -199,14 +199,8 @@
 
             <!-- Navigation Arrows -->
             <div class="exercise-navigation">
-                <button class="nav-arrow prev" disabled>&larr; Previous</button>
-                <div class="step-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="nav-arrow next">Next &rarr;</button>
+                <button class="nav-arrow prev"><a href="exercise-1.3.html"> &larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-2.1.html">Click Here For Exercise 2 &rarr;</a></button>
             </div>
         </main>
     </div>
