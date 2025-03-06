@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Collaborative Exercise, Pulling Repository's, Merging and Merge Conflicts</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li class="active"><a href="exercise-4.1.html"><span class="step-number">4.1</span>Forking & Cloning a Repository</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>4.1 Collaborative Exercise</h2>
+                <div class="content-card">
+                    <p> The purpose of this exercise is to put everything into practice that we’ve learnt in exercises 1, 2 and 3, as well as learn about <b>merging</b>, <b>merge conflicts</b> and <b>pull requests</b>. This is key to collaborative projects in Git.</p>
+                    <p>This part of the lesson is going to be less structured, and you'll be expected to know which commands to run for concepts we covered in previous lessons, but will still take you through the steps for new concepts.</p>
+                    <p><b><span style="color: #50bcc4;">Exercise Prerequisite</span></b></p>
+                    <p>As this is a collaborative exercise, you will need to organise yourselves into small groups of <b>2-3</b>, and choose <b>one person</b> in your group to be a team leader.</p>
+
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Fork and clone the collaborative exercise GitHub repository</li>
+                        <li>Learn how to invite people to a repository to work collaboratively</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-step active" id="setup">
+                <span class="step-indicator">Step 1 of 10</span>
+                <h2>Fork the Repository</h2>
+                <p>We've already looked at how to <b>fork</b> a repository, so you should be an expert at this by now.</p>
+                <p>The only difference when forking a repoistory in a collaborative project is that only <b>one</b> person needs to fork it, and this person should be your <b>team leader</b>.</p>
+                <p>This person will also be the <b>owner</b> of the repository.</p>
+                <ul>
+                    <li>Fork <a href="https://github.com/rockborne-git-training/git-exercise-04">this repository</a> for exercise 4</li>
+                </ul>
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/forking_04.gif">
+                </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 10</span>
+                <h2>Clone The Forked Repository</h2>
+                <p><b><span style="color: #50bcc4;">File path you need to be in:</span></b> <b>"C:\Users\YourName\git-exercises"</b></p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git clone forked_repo_link</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div> 
+                <p>This will create a folder named <b>git-exercise-04</b></p>
+                <div class="image-container">
+                    <img class="git_gif" src="images/git_clone_04.gif">
+                </div>    
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 10</span>
+                <h2>Create a New Empty GitHub Repository</h2>
+                <p>Your designated <b>team leader</b> who also forked the repository should be the one to create the new GitHub repository.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <ul>
+                            <li>Copy the forked repo link</li>
+                            <li>Go to GitHub and click '<b>New repository</b>'</li>
+                            <li>Give your repository a name e.g. <b>git-team-exercise</b></li>
+                            <li>Set the repository to <b>public</b></li>
+                            <li><b>Do not</b> initialise the repository with a README as we will be adding files later</li>
+                            <li>Click '<b>Create repository</b>'</li>
+                        </ul>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/team_repo.gif">
+                    </div>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 4 of 10</span>
+                <h2>Create a New Folder On Your Local Machine</h2>
+                <p>To move the files to the empty GitHub repository, you need to create a corresponding folder on your local machine for the new GitHub repository. Then we need to initialise it.</p>
+                <p><b><span style="color: #50bcc4;">File path you need to be in:</span></b> <b>"C:\Users\YourName\git-exercises"</b></p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>mkdir git-team-exercise</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="command-block">
+                            <code>cd git-team-exercise</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="command-block">
+                            <code>git init</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/team_exercise_folder.gif">
+                    </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 5 of 10</span>
+                <h2>Move Files from Forked Repository to the New Repository</h2>
+                <p>Because we want the original repository to remain untouched when we come to pushing changes and merging branches into <b>master</b>, we need to copy the files which provide the template for the collaborative exercise into the new repository.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <ul>
+                            <li>Open your <b>local directory</b> where the <b>git-exercise-04</b> folder (cloned fork) is located</li>
+                            <li>Copy all the files from <b>git-exercise-04</b> folder (Ctrl + A, Ctrl C) to the new repository folder called <b>git-team-exercise</b></li>
+                            <li>Paste the files (Ctrl + V) into the <b>git-team-exercise</b> folder</li>
+                        </ul>
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/move_files.gif">
+                    </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 6 of 10</span>
+                <h2>Add the Remote Repository for the New Repository</h2>
+                <p>After moving the files, go into the git-team-exercise folder in Git Bash so we can add the new remote repository we created on GitHub.</p>
+                <p><b><span style="color: #50bcc4;">File path you need to be in:</span></b> <b>"C:\Users\YourName\git-exercises\git-team-exercise"</b></p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git remote add origin new_github_repo_link</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/new_repo.gif">
+                    </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 7 of 10</span>
+                <h2>Create an Initial Commit</h2>
+                <p>As our repository has no commits yet, we need to create an <b>initial commit</b> before we can <b>push</b> to the remote repository.</p>
+                <p><b><span style="color: #50bcc4;">File path you need to be in:</span></b> <b>"C:\Users\YourName\git-exercises\git-team-exercise"</b></p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git add .</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="command-block">
+                            <code>git commit -m"Initial commit"</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/initial_commit.png">
+                    </div>
+
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 8 of 10</span>
+                <h2>Push The Files to the New GitHub Repository</h2>
+                <p>Now that we've linked our local repository where we copied and pasted files from the forked repository, we can now push the files to the <b>new GitHub repository</b>.</p>
+                <p><b><span style="color: #50bcc4;">File path you need to be in:</span></b> <b>"C:\Users\YourName\git-exercises\git-team-exercise"</b></p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p>Run the following commands in Git Bash</p>
+                        <div class="command-block">
+                            <code>git push -u origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/push_upstream.gif">
+                    </div>
+
+                    
+                    <p class="lesson-description"><b><span style="color: #50bcc4;">What is this code doing?</span></b></p>
+                    <ul>
+                        <li><b><span style="color: #f08404;">git push -u origin master</span>:</b> This <b>pushes</b> the cloned forked repository <b>back to GitHub</b>. <b>-u</b> links the local <b>master</b> branch to the remote <b>master</b> branch.</li>
+                    </ul>
+                </div>   
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 9 of 10</span>
+                <h2>Invite Collaborators</h2>
+                <p>As this is a collaborative task, we will need to invite other people.</p>
+                <ul>
+                    <li>Click on <b>'Settings'</b> in your <b>git-team-exercise</b> GitHub repository</li>
+                    <li>On the left, click on '<b>Collaborators</b>'</li>
+                    <li>Click on '<b>Add people</b>'' and invite your colleagues to the repository</li>
+                </ul>
+                <div class="content-card">
+                    <div class="step-content">
+                    </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/invite_collab.gif">
+                    </div> 
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 10 of 10</span>
+                <h2>Accept the Invitation</h2>
+                <p>If your <b>team leader</b> has invited you to collaborate on the GitHub repository, you will now need to accept the invite.</p>
+                <p>Either <b>login to your email</b> or go to the <b>notification tab</b> on your GitHub account to view the invite link.</p>
+                <ul>
+                    <li>Click on the invite link</li>
+                    <li>Select '<b>Accept invitation</b>'</li>
+                </ul>
+                <p class="lesson-description">Now you should be able to gain access to the repository and also be able to <b>push</b> to the repository.</p>
+                <div class="content-card">
+                    <div class="image-container">
+                        <img class="git_gif" src="images/accept_invite.gif">
+                    </div> 
+
+
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+                <p>In this lesson, we explored the process of collaborating on a Git project by <b>forking</b> and <b>cloning</b> repositories. The first step involved forking the main repository, after which the team leader <b>cloned</b> the repository to their local machine. We also learned how to create a new GitHub repository, add a new folder on the local machine, and move the necessary files from the forked repository to the new repository.</p>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev" disabled>&larr; Previous</button>
+                <button class="nav-arrow next"><a href="exercise-3.2.html"> Next &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
