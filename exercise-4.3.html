@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Collaborative Exercise, Pulling Repository's, Merging and Merge Conflicts</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Forking & Cloning a Repository</a></li>
+                    <li><a href="exercise-4.2.html"><span class="step-number">4.2</span>Making Changes on Branches</a></li>
+                    <li class="active"><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Conflicts</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>4.3 Merge Conflicts</h2>
+                <div class="content-card">
+                    <p>A <b>merge conflict</b> typically arise when two people have changed the same lines in a file or if one person deleted a file whilst another developer was working on it and Git doesn't know which version to keep.</p>
+                    <p>Let's take a look at how to handle a <b>merge conflict</b>, but first we need to create one.</p>
+                    <p>Decide between yourselves who's going to be <b>Developer A</b> and who's going to be <b>Developer B</b>.</p>
+
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Understand what merge conflicts are and why they occur.</li>
+                        <li>Learn how to identify merge conflicts in Git.</li>
+                        <li>Practice resolving merge conflicts in GitHub.</li>
+                        <li>Learn best practices for avoiding merge conflicts in collaborative projects.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="exercise-step active" id="setup">
+                <span class="step-indicator">Step 1 of 7</span>
+                <h2>Make Sure You're in Different Branches</h2>
+                <p>To create a <b>merge conflict</b> you need to make sure you're in different development branches.</p>
+                <p>It's important to note that you <b>cannot</b> create a merge conflict if two people are working on the <b>same branch</b>.</p>
+                <p>Git will not detect conflicts in the same branch and will simply take the latest committed change.</p>
+                <div class="content-card">
+                    <p><b><span style="color: #50bcc4;">Developer A:</span></b> Stay on the master branch, you do not need to do anything.</p>
+                    <p><b><span style="color: #50bcc4;">Developer B:</span></b> Create a new branch.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git checkout -b merge-conflict</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/conflict_branch.gif">
+                </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 7</span>
+                <h2>Edit the Same Line of Code</h2>
+                <p>Now we're all going to create our own <b>seperate branches</b>.</p>
+                <div class="content-card">
+                    <p>Both <b>Developer A</b> and <b>Developer B</b> should edit <b>line 25</b> of code.</p>
+                    <ul>
+                        <li>Insert a pseudo landline number</li>
+                        <li>Make sure the landline numbers you insert are <b>not</b> the same</li>
+                        <li>Save the file (Ctrl + S)</li>
+                    </ul>
+                    <div class="step-content">
+                <div class="image-container">
+                    <img class="git_gif" src="images/landline.gif">
+                </div>
+                
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 7</span>
+                <h2>Stage, Commit and Push the Changes</h2>
+                <p>Now we need to add the file to the staging index, commit it, and push to your respective branches</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p><b>Developer A: </b>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git push origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div> 
+
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                </div>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev"><a href="exercise-4.2.html"> &larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercise-4.4.html"> Next &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
