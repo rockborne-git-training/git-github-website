@@ -271,7 +271,7 @@ tr:nth-child(even) {
 /* Exercises Page Styles */
 .exercises {
     padding: 8rem 2rem 4rem;
-    background: #white;
+    background: var(--light-color);
     min-height: 100vh;
 }
 

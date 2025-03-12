@@ -57,10 +57,12 @@
 
                     <h3>Lesson Objectives</h3>
                     <ul>
-                        <li>Understand the importance of editing commits</li>
-                        <li>Use git commit --amend to modify the most recent commit</li>
-                        <li>Use git rebase to edit an older commit</li>
+                        <li>Understand the importance of modifying and reverting Git commits to maintain a clean project history.</li>
+                        <li>Learn how to use <b>git commit --amend</b> to modify the most recent commit's message.</li>
+                        <li>Learn how to use <b>git reset --hard</b> to revert to a previous commit and restore file states.</li>
+                        <li>Verify changes using <b>git log</b> to check the commit history after modifications or resets.</li>
                     </ul>
+                    
                 </div>
             </div>
 
@@ -99,7 +101,6 @@
                         </div>
                     </div>
                     <p>As you can see, <span class="code-text">git log</span> shows a list of commits in chronological order including the SHA, author, date of the commit and the message.</p>
-                    <p>git commit --amend</p>
                     <div class="image-container">
                         <img class="git_gif" src="images/git_log_verify.png">
                     </div>
@@ -107,90 +108,86 @@
 
                 <div class="exercise-step" id="init">
                     <span class="step-indicator">Step 3 of 4</span>
-                    <h2>Modifying Files in a Previous Commit</h2>
+                    <h2>Reverting Back to a Previous Commit</h2>
                     <div class="content-card">
-                        <p>Let's take a look at how to edit contents of a file from a previous commit that wasn't the most recent one.<p>
-                        <p>After runing git log, we can see that every commit has a <b>SHA</b> which uniquely identifies that commit. We can use this <b>SHA</b> to target a specific commit we want to modify.</p>
-                        <p>We'll edit the commit where we answered questions <b>1-3</b>.</p>
+                        <p><b><span style="color: #50bcc4;">Why would we want to revert to a previous file version?</span></b></p>
                         <ul>
-                            <li>Open the exercise_1_questions.txt file in Notepad</li>
-                            <li>Edit the file. For simplciity, we'll just put the word 'The' in front of the first answer.</li>
-                            <li>Save (Ctrl + S) and close Notepad.</li>
-                        </ul>
+                            <li><strong>Undoing Mistakes:</strong> Reverting to a previous version helps quickly undo errors or changes that break your code.</li>
+                            <li><strong>Recovering Lost Work:</strong> Reverting restores lost work if code is deleted or overwritten, as long as it was committed.</li>
+                            <li><strong>Version Control and Experimentation:</strong> Reverting allows safe experimentation, enabling you to undo mistakes without losing progress.</li>
+                            <li><strong>Bug Fixes and Rollbacks:</strong> Reverting lets you quickly roll back to a working version if a new feature or fix causes issues.</li>                            
+                          </ul>
+                          
+                          <p>Let's take a look at how to go back to a <b>previous version</b> of your file.<p>
+                            <p>After runing git log, we can see that every commit has a <b>SHA</b> which uniquely identifies that commit. We can use this <b>SHA</b> to target a specific commit we want to modify.</p>
+                            <p class="lesson-description">After running <b>git log</b>, copy the whole <b>SHA</b> of the commit where we answered the first three questions</p>
                         <div class="image-container">
-                            <img class="git_gif" src="images/edit_trivia.gif">
+                            <img class="git_gif" src="images/commit_sha.gif">
                         </div>
-                        <ul>
-                            <li>Now we need to retrieve the <b>SHA</b> of the commit where we answered the first three questions</li>
-                        </ul>
                         <div class="step-content">
                             <p>Run the following command in Git Bash</p>
                             <div class="command-block">
-                                <code>git log</code>
-                                <button class="copy-btn">Copy</button>
-                            </div>
-                            <div class="command-block">
-                                <code>git rebase -i HEAD~2</code>
+                                <code>git reset --hard commit-hash</code>
                                 <button class="copy-btn">Copy</button>
                             </div>
                         </div>
+                        <p><b><span style="color: #50bcc4;">What is this code doing?</span></b></p> 
                         <ul>
-                            <li>Copy the <b>whole SHA</b> of the specified commit.</li>
-                        </ul>
-                        <p><b>Note:</b> Your <b>SHA</b> will be different from mine because they're all unique.</p>
+                            <li><strong>Resets the commit history:</strong> Moves the current branch pointer to the specified commit, effectively "rewinding" the history.</li>
+                            <li><strong>Discards uncommitted changes:</strong> Removes all changes in the working directory and staging area that have not been committed.</li>
+                            <li><strong>Restores files to previous state:</strong> Resets all files in the working directory to match the specified commit.</li>
+                          </ul>
+                          
                 </div>
             </div>
 
             <div class="exercise-step" id="init">
                 <span class="step-indicator">Step 4 of 5</span>
-                <h2>Commit The Change</h2>
+                <h2>Verify the Reversion</h2>
                 <div class="content-card">
-                    <p>A good commit message is <b>essential</b> for maintaining clarity and understanding in your project, especially when working in teams or revisiting code in the future.<p>
-                    <p><b>What makes a good commit message?</b></p>
-                    <ul>
-                        <li><b>Clear and Descriptive:</b> Summarises <b>what</b> the change is</li>
-                        <li><b>Short Message:</b> Keep it brief (60 characters or less), but provide enough context</li>
-                        <li><b>Focus on a Single Change:</b> Each commit should represent <b>one</b> logical change. If it doesn't, then you should probably make more than one commit</li>
-                    </ul>
                     <p>Now that we've taken a look at some best practices for commit messages, let's create one ourselves.</p>
                     <div class="step-content">
                         <p>Run the following command in Git Bash</p>
                         <div class="command-block">
-                            <code>git commit -m"Added answers to questions 1-3 on exercise_1_questions.txt" </code>
+                            <code>git log</code>
                             <button class="copy-btn">Copy</button>
                         </div>
                     </div>
                     <div class="image-container">
-                        <img class="git_gif" src="images/commit_trivia.gif">
+                        <img class="git_gif" src="images/revert_commit_log.gif">
                     </div>
+                    <p>As you can see, this has reverted us back to a previous version of the file and has reset the commit history, removing the commit where we answered questions 4 and 5.</p>
             </div>
         </div>
 
         <div class="exercise-step" id="init">
             <span class="step-indicator">Step 5 of 5</span>
-            <h2>Answer the Rest of The Questions and Commit the Changes</h2>
+            <h2>Check the File</h2>
             <div class="content-card">
-                <p>Now that we've made some changes to the file and committed these changes, go ahead and answers questions <b>4</b> and <b>5</b> on the file, and then stage and commit the file as usual.</p>
-                <p><b>Tip: </b>Don't forget to save (Ctrl + S) and close the file before staging it.</p>
+                <p>We can also verify that we reverted back to a previous version of the file by opening it in a text editor.</p>
                 <div class="step-content">
                     <p>Run the following commands in Git Bash</p>
                     <div class="command-block">
                         <code>notepad exercise_1_questions.txt</code>
                         <button class="copy-btn">Copy</button>
                     </div>
-                    <div class="command-block">
-                        <code>git add .</code>
-                        <button class="copy-btn">Copy</button>
-                    </div>
-                    <div class="command-block">
-                        <code>git commit -m"Added answers to questions 4 and 5 on exercise_1_questions.txt"</code>
-                        <button class="copy-btn">Copy</button>
-                    </div>
                 </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/git_revert.png">
+                </div>
+                <p class="lesson-description">Your answers to questions 4 and 5 should now be gone as they weren't in the commit where we added the answers to questions 1-3, meaning we reverted successfully.</p>
+
+
                 <div class="lesson-summary">
                     <h3><span style="color: #f08404;">Lesson Summary</span></h3>
                 </div>
-                <p>In this lesson, we learned how to <b>modify Git commits</b> to ensure a clean and accurate project history. We started by understanding the importance of editing commits to keep them meaningful and error-free. Using the <b>git commit --amend</b> command, we modified the most recent commit's message, and verified the changes with <b>git log</b>. We also explored how to edit earlier commits using <b>git rebase -i</b>, targeting specific commits with their unique SHA.</p>
+                <ul>
+                    <li>Learned how to <b>modify Git commits</b> for a clean and accurate project history.</li>
+                    <li>Used <b>git commit --amend</b> to modify the most recent commit's message.</li>
+                    <li>Verified changes with <b>git log</b> to view updated commit history.</li>
+                    <li>Used <b>git reset --hard</b> to revert to a previous commit and restore files to that state.</li>
+                </ul>
+                
         </div>
     </div>
 
