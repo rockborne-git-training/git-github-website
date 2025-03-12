@@ -438,6 +438,7 @@ tr:nth-child(even) {
 
     .tab-btn {
         width: 100%;
+        
     }
 }
 
@@ -885,13 +886,14 @@ tr:nth-child(even) {
 .tab-btn {
     padding: 0.75rem 1.5rem;
     border: none;
-    background: var(--light-color);
+    background: white;
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
     min-width: 120px;
     font-size: 1rem;
+    border: 2px solid #e72b77;
 }
 
 .tab-btn.active {
