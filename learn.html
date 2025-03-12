@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Git & GitHub</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body style="background-color: var(--light-color);">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="exercise-1.1.html">Exercises</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    <!-- Learn Section -->
+    <div class="learn-container">
+        <h1 class="learn-title">Learn Git & GitHub</h1>
+        <p class="learn-subtitle">Master version control and collaborative development with our comprehensive guide</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="git">Git</button>
+            <button class="tab-btn" data-tab="github">GitHub</button>
+        </div>
+        
+        <div class="tab-content" id="git-content">
+            <h2>What is Git?</h2>
+            <p>Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development.</p>
+            
+            <h3>Key Concepts</h3>
+            <ul>
+                <li>Repository - A storage location for your project</li>
+                <li>Commit - A snapshot of your files at a specific point in time</li>
+                <li>Branch - A parallel version of your repository</li>
+                <li>Merge - Combining changes from different branches</li>
+            </ul>
+            <div class="concept-grid">
+                <div class="concept-card"><h4>Repository</h4><p>A storage location for your project containing all files and the history of changes.</p></div>
+                <div class="concept-card"><h4>Commit</h4><p>A snapshot of your files at a specific point in time, capturing changes.</p></div>
+                <div class="concept-card"><h4>Branch</h4><p>A parallel version of your repository for working on different features.</p></div>
+                <div class="concept-card"><h4>Merge</h4><p>Combining changes from different branches into a single branch.</p></div>
+            </div>
+            
+            <h3>Common Git Commands</h3>
+            <div class="commands-section">
+                <div class="command"><code>git init</code><p>Initialize a new Git repository</p></div>
+                <div class="command"><code>git add .</code><p>Stage all changed files for commit</p></div>
+                <div class="command"><code>git commit -m "message"</code><p>Commit staged changes with a message</p></div>
+                <div class="command"><code>git branch</code><p>List all local branches</p></div>
+                <div class="command"><code>git checkout -b branch-name</code><p>Create and switch to a new branch</p></div>
+                <div class="command"><code>git merge branch-name</code><p>Merge changes from a specified branch</p></div>
+            </div>
+        </div>
+        
+        <div class="tab-content hidden" id="github-content">
+            <h2>What is GitHub?</h2>
+            <p>GitHub is a web-based hosting service for version control using Git. It provides distributed version control, access control, bug tracking, task management, CI/CD automation, and wikis.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+                <li>Repository Hosting - Store your Git repositories online</li>
+                <li>Pull Requests - Propose changes to others' code</li>
+                <li>Issues - Track bugs and feature requests</li>
+                <li>Actions - Automate your development workflow</li>
+            </ul>
+            <div class="concept-grid">
+                <div class="concept-card"><h4>Repository Hosting</h4><p>Store your Git repositories online, making them accessible anywhere.</p></div>
+                <div class="concept-card"><h4>Pull Requests</h4><p>Propose changes and collaborate through code reviews.</p></div>
+                <div class="concept-card"><h4>Issues</h4><p>Track bugs and feature requests with discussions.</p></div>
+                <div class="concept-card"><h4>GitHub Actions</h4><p>Automate workflows with CI/CD pipelines.</p></div>
+            </div>
+            
+            <h3>Collaborative Workflow</h3>
+            <p>GitHub facilitates team collaboration through this standard workflow:</p>
+            <ol class="workflow-list">
+                <li>Fork a repository (create your own copy)</li>
+                <li>Clone your fork (download to your machine)</li>
+                <li>Create a branch (for new feature development)</li>
+                <li>Make changes and commit them</li>
+                <li>Push to your fork on GitHub</li>
+                <li>Create a pull request (propose changes)</li>
+                <li>Discuss and revise through code review</li>
+                <li>Merge your pull request when approved</li>
+            </ol>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <p>Ready to put your knowledge into practice? Start with our interactive exercises!</p>
+            <a href="exercises.html" class="btn btn-primary">Start Practicing</a>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
