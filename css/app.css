@@ -69,8 +69,9 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
-    color: var(--white);
+    
+    background: #faf9fd;
+    color: #50bcc4;
     padding: 8rem 2rem 6rem;
     text-align: center;
 }
@@ -82,7 +83,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -90,7 +91,7 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    color: white;
+    color: #50bcc4;
     font-weight: 600;
 }
 
@@ -121,14 +122,15 @@ body {
 /* Features Section */
 .features {
     padding: 5rem 2rem;
-    background: #faf9fd;
+    /* background: #faf9fd; */
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 3rem;
-    color: #50bcc4;
+    color: white;
 }
 
 .feature-grid {
@@ -138,9 +140,10 @@ body {
 }
 
 .feature-card {
-    background: var(--white);
+    background: #faf9fd;
     padding: 2rem;
     border-radius: 0.5rem;
+    border: 2px solid #e72b77;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
