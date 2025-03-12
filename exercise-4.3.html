@@ -36,9 +36,10 @@
                     <span class="progress-text">0/4 Steps</span>
                 </div>
                 <ul class="exercise-nav">
-                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Forking & Cloning a Repository</a></li>
-                    <li><a href="exercise-4.2.html"><span class="step-number">4.2</span>Making Changes on Branches</a></li>
-                    <li class="active"><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Conflicts</a></li>
+                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Collaborating on a Repository</a></li>
+                    <li class="active"><a href="exercise-4.2.html"><span class="step-number">4.2</span>Making Changes on Branches</a></li>
+                    <li class="active"><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Requests</a></li>
+                    <li><a href="exercise-4.4.html"><span class="step-number">4.4</span>Merge Conflicts</a></li>
                 </ul>
             </div>
         </aside>
@@ -47,77 +48,68 @@
         <main class="exercise-content">
 
             <div class="exercise-step" id="init">
-                <h2>4.3 Merge Conflicts</h2>
+                <h2>4.3 Merge Requests</h2>
                 <div class="content-card">
-                    <p>A <b>merge conflict</b> typically arise when two people have changed the same lines in a file or if one person deleted a file whilst another developer was working on it and Git doesn't know which version to keep.</p>
-                    <p>Let's take a look at how to handle a <b>merge conflict</b>, but first we need to create one.</p>
-                    <p>Decide between yourselves who's going to be <b>Developer A</b> and who's going to be <b>Developer B</b>.</p>
+                    <p>A <b>merge request (or pull request) </b>is a way to propose changes to a repository by submitting a request to merge your feature branch into the main branch after reviewing and resolving any conflicts.</p>
 
                     <h3>Lesson Objectives</h3>
                     <ul>
-                        <li>Understand what merge conflicts are and why they occur.</li>
-                        <li>Learn how to identify merge conflicts in Git.</li>
-                        <li>Practice resolving merge conflicts in GitHub.</li>
-                        <li>Learn best practices for avoiding merge conflicts in collaborative projects.</li>
+                        <li>Understand what a merge request is and its role in collaborative development.</li>
+                        <li>Learn how to create a merge request from a feature branch to the master branch.</li>
+                        <li>Learn when to pull code</li>
                     </ul>
-                    
                 </div>
             </div>
 
-            <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 1 of 7</span>
-                <h2>Make Sure You're in Different Branches</h2>
-                <p>To create a <b>merge conflict</b> you need to make sure you're in different development branches.</p>
-                <p>It's important to note that you <b>cannot</b> create a merge conflict if two people are working on the <b>same branch</b>.</p>
-                <p>Git will not detect conflicts in the same branch and will simply take the latest committed change.</p>
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 1 of 2</span>
+                <h2>Merging the Feature Branch into the Master Branch</h2>
+                <p>If you're happy with how your section looks, we go ahead and <b>merge</b> this into the <b>master</b> branch.</p>
                 <div class="content-card">
-                    <p><b><span style="color: #50bcc4;">Developer A:</span></b> Stay on the master branch, you do not need to do anything.</p>
-                    <p><b><span style="color: #50bcc4;">Developer B:</span></b> Create a new branch.</p>
-                    <div class="step-content">
-                        <p>Run the following command in Git Bash</p>
-                        <div class="command-block">
-                            <code>git checkout -b merge-conflict</code>
-                            <button class="copy-btn">Copy</button>
-                        </div>
-                    </div> 
-                </div> 
-            </div>
-                <div class="image-container">
-                    <img class="git_gif" src="images/conflict_branch.gif">
+                        <ul>
+                            <li>Open your <b>git-team-exercise</b> repository in GitHub</li>
+                            <li>Click on the button at the top of the repository called <b>'Compare & pull request'</b></li>
+                            <li>Scroll down and click <b>'Create pull request'</b></li>
+                            <li>GitHub should state that there is no conflict with the base branch so now click <b>'Merge pull request'</b></li>
+                            <li>Change the commit message if you want to, then click <b>'Confirm merge'</b></li>
+                            <li>Your <b>pull request</b> should have successfully merged</li>
+                            <li>Now you can click <b>'Delete branch'</b> as we've implemented our new feature</li>
+                        </ul>
                 </div>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/merge_request.gif">
+                    </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 2 of 7</span>
-                <h2>Edit the Same Line of Code</h2>
-                <p>Now we're all going to create our own <b>seperate branches</b>.</p>
-                <div class="content-card">
-                    <p>Both <b>Developer A</b> and <b>Developer B</b> should edit <b>line 25</b> of code.</p>
-                    <ul>
-                        <li>Insert a pseudo landline number</li>
-                        <li>Make sure the landline numbers you insert are <b>not</b> the same</li>
-                        <li>Save the file (Ctrl + S)</li>
-                    </ul>
-                    <div class="step-content">
-                <div class="image-container">
-                    <img class="git_gif" src="images/landline.gif">
-                </div>
-                
-            <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 3 of 7</span>
-                <h2>Stage, Commit and Push the Changes</h2>
-                <p>Now we need to add the file to the staging index, commit it, and push to your respective branches</p>
+                <span class="step-indicator">Step 2 of 2</span>
+                <h2>Pull the Latest Changes</h2>
+                <p>Everyone in your team should have pushed their sections to the <b>remote</b> GitHub repository however, you can still only see <b>your</b> changes.</p>
+                <p>This is because we don't have the most up to date version of the files in our <b>local</b> repository, which doesn't get updated automatically. We have to <b>manually</b> retrieve the latest changes from the remote repository.</p>
+                <p>Git Bash will say you're still on your <b>feature branch</b> even though we've deleted it in GitHub, so we need to switch to the <b>master</b> branch before pulling the changes.</p>
                 <div class="content-card">
                     <div class="step-content">
-                        <p><b>Developer A: </b>Run the following command in Git Bash</p>
+                        <p>Run the following commands in Git Bash</p>
                         <div class="command-block">
-                            <code>git push origin master</code>
+                            <code>git checkout master</code>
                             <button class="copy-btn">Copy</button>
                         </div>
-                    </div> 
+                        <div class="command-block">
+                            <code>git pull origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                <p>Now when you refresh the webpage, you should see the changes made by everyone else in your team.</p>
+                <p>Your code should be updated too.</p>
 
                 <div class="lesson-summary">
                     <h3><span style="color: #f08404;">Lesson Summary</span></h3>
                 </div>
+                <ul>
+                    <li>Reviewed the code changes in the pull request before merging them into the master branch.</li>
+                    <li>Learned how to pull the latest changes from the remote repository to ensure your local branch is up to date.</li>
+                    <li>Successfully merged the feature branch into the master branch and deleted the feature branch after the merge.</li>
+                </ul>
+                
         </div>
     </div>
 

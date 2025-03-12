@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Exercise - GitMaster</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img class="nav-logo" src="images/Rockborne-Sub-Text-BLACK.png" alt="Rockborne Logo"></a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="exercise-layout">
+        <!-- Exercise Sidebar -->
+        <aside class="exercise-sidebar">
+            <button class="sidebar-toggle" aria-label="toggle sidebar">
+                <span class="hamburger"></span>
+            </button>
+            <div class="sidebar-content">
+                <h3>Collaborative Exercise, Pulling Repository's, Merging and Merge Conflicts</h3>
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">0/4 Steps</span>
+                </div>
+                <ul class="exercise-nav">
+                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Collaborating on a Repository</a></li>
+                    <li class="active"><a href="exercise-4.2.html"><span class="step-number">4.2</span>Making Changes on Branches</a></li>
+                    <li class="active"><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Requests</a></li>
+                    <li><a href="exercise-4.4.html"><span class="step-number">4.4</span>Merge Conflicts</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Exercise Content -->
+        <main class="exercise-content">
+
+            <div class="exercise-step" id="init">
+                <h2>4.3 Merge Conflicts</h2>
+                <div class="content-card">
+                    <p>A <b>merge conflict</b> typically arise when two people have changed the same lines in a file or if one person deleted a file whilst another developer was working on it and Git doesn't know which version to keep.</p>
+                    <p>Let's take a look at how to handle a <b>merge conflict</b>, but first we need to create one.</p>
+                    <p>Decide between yourselves who's going to be <b>Developer A</b> and who's going to be <b>Developer B</b>.</p>
+
+                    <h3>Lesson Objectives</h3>
+                    <ul>
+                        <li>Understand what merge conflicts are and why they occur.</li>
+                        <li>Learn how to identify merge conflicts in Git.</li>
+                        <li>Practice resolving merge conflicts in GitHub.</li>
+                        <li>Learn best practices for avoiding merge conflicts in collaborative projects.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="exercise-step active" id="setup">
+                <span class="step-indicator">Step 1 of 7</span>
+                <h2>Make Sure You're in Different Branches</h2>
+                <p>To create a <b>merge conflict</b> you need to make sure you're in different development branches.</p>
+                <p>It's important to note that you <b>cannot</b> create a merge conflict if two people are working on the <b>same branch</b>.</p>
+                <p>Git will not detect conflicts in the same branch and will simply take the latest committed change.</p>
+                <div class="content-card">
+                    <p><b><span style="color: #50bcc4;">Developer A:</span></b> Stay on the <b>master</b> branch, you do not need to do anything.</p>
+                    <p><b><span style="color: #50bcc4;">Developer B:</span></b> Create a <b>new</b> branch called <b>merge-conflict</b>.</p>
+                    <div class="step-content">
+                        <p>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git checkout -b merge-conflict</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/conflict_branch.gif">
+                </div>
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 2 of 7</span>
+                <h2>Edit the Same Line of Code</h2>
+                <p>Now we're all going to create our own <b>seperate branches</b>.</p>
+                <div class="content-card">
+                    <p>Both <b>Developer A</b> and <b>Developer B</b> should edit <b>line 25</b> of code.</p>
+                    <ul>
+                        <li>Insert a pseudo landline number</li>
+                        <li>Make sure the landline numbers you insert are <b>not</b> the same</li>
+                        <li>Save the file (Ctrl + S)</li>
+                    </ul>
+                    <div class="step-content">
+                <div class="image-container">
+                    <img class="git_gif" src="images/landline.gif">
+                </div>
+                
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 7</span>
+                <h2>Stage, Commit and Push the Changes</h2>
+                <p>Now we need to add the file to the staging index, commit it, and push to your respective branches.</p>
+                <div class="content-card">
+                    <div class="step-content">
+                        <p><b>Developer A: </b>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git push origin master</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+
+                        <p><b>Developer B: </b>Run the following command in Git Bash</p>
+                        <div class="command-block">
+                            <code>git push origin merge-conflict</code>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div> 
+
+            <div class="exercise-step" id="init">
+                        <span class="step-indicator">Step 3 of 7</span>
+                        <h2>Review the Merge on GitHub</h2>
+                        <p>We're now going to deal with the merge conflict on GitHub.</p>
+                        <div class="content-card">
+                            <ul>
+                                <li>Go to your <b>git-team-exercise</b> repository on GitHub</li>
+                                <li>Click on <b>Compare & Pull Request</b></li>
+                                <li>GitHub should state that it <b>can't automatically merge</b> the code, but we can still create the pull request</li>
+                                <li>Scroll down and click <b>Create pull request</b></li>
+                            </ul>
+                        </div> 
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 7</span>
+                <h2>Manually Fixing the Merge Conflict in GitHub</h2>
+                <p>We're now going to deal with the merge conflict on GitHub.</p>
+                <p>After we've clicked on <b>Create pull request</b>, GitHub will tell you that the branch has conflicts that must be resolved, as well as which file it occurs in.</p>
+                <p>Let's see how we can resolve this.</p>
+                <div class="content-card">
+                    <ul>
+                        <li>Click <b>Resolve conflicts</b></li>
+                        <li>The code which has the merge conflict in should appear on the page, and is specifically highlighted with yellow next to it</b></li>
+                    </ul>
+                    <p class="lesson-description"><b><span style="color: #50bcc4;">What do the symbols mean?</span></b></p>
+                    <ul>
+                    </ul>
+                    <li><span style="color: #f08404; font-weight: bold;"><<<<<<< branch-name:</span> Everything below this line shows you what’s on the current branch</li>
+                    <li><span style="color: #f08404; font-weight: bold;">======= :</span> Is the end of the original lines, everything that follows is what’s on the branch that’s being merged in.</li>
+                    <li><span style="color: #f08404; font-weight: bold;">>>>>>>> branch-name:</span> Ending indicator of what’s on the branch that’s being merged in</li>                    
+                </div> 
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 7</span>
+                <h2>Choose Which Version to Keep</h2>
+                <p>GitHub has told you exactly where the conflict is in your code file.</p>
+                <p>From here, you can either choose one version, combine both, or make your own change.</p>
+                <p>For the purpose of exercise, we'll delete the version from the master branch to show the sequence of steps</p>
+                <div class="content-card">
+                    <ul>
+                        <li>Delete lines <b>25, 26 and 28</b></li>
+                        <li>You should only be left with one landline number, mobile number and email <b>inside</b> the <b>contact-details</b> div</li>
+                    </ul>
+                </div> 
+
+            <div class="exercise-step" id="init">
+                <span class="step-indicator">Step 3 of 7</span>
+                <h2>Confirm the Merge</h2>
+                <p>Now that we've chosen which version to keep, we can mark the conflict has resolved and continue to merge the changes into the <b>master</b> branch.</p>
+                <div class="content-card">
+                    <ul>
+                        <li>Scroll back up the page and click <b>Mark as resolved</b></li>
+                        <li>Click <b>Commit merge</b></li>
+                        <li>The page should display that there are <b>no conflicts with base branch</b> because we've resolved it</li>
+                        <li>Click <b>Merge pull request</b></li>
+                        <li>Click <b>Confirm merge</b></li>
+                        <li>Now you can <b>delete</b> the <b>merge-conflict</b> branch</li>
+                    </ul>
+                </div> 
+
+                <p class="lesson-description">You have now successfully resolved your first merge conflict.</p>
+                <div class="lesson-summary">
+                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
+                    <li>Created a merge conflict by editing the same line of code in two different branches.</li>
+                    <li>Reviewed the merge conflict on GitHub and identified the conflicting code.</li>
+                    <li>Resolved the conflict by choosing which version of the code to keep.</li>
+                    <li>Successfully merged the changes and deleted the conflict branch.</li>
+                </div>
+        </div>
+    </div>
+
+        
+
+
+            <!-- Navigation Arrows -->
+            <div class="exercise-navigation">
+                <button class="nav-arrow prev"><a href="exercise-4.3.html"> &larr; Previous</a></button>
+                <button class="nav-arrow next"><a href="exercises.html"> Finish &rarr;</a></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

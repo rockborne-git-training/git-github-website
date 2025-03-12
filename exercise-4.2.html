@@ -36,9 +36,10 @@
                     <span class="progress-text">0/4 Steps</span>
                 </div>
                 <ul class="exercise-nav">
-                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Forking & Cloning a Repository</a></li>
+                    <li><a href="exercise-4.1.html"><span class="step-number">4.1</span>Collaborating on a Repository</a></li>
                     <li class="active"><a href="exercise-4.2.html"><span class="step-number">4.2</span>Making Changes on Branches</a></li>
-                    <li><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Conflicts</a></li>
+                    <li class="active"><a href="exercise-4.3.html"><span class="step-number">4.3</span>Merge Requests</a></li>
+                    <li><a href="exercise-4.4.html"><span class="step-number">4.4</span>Merge Conflicts</a></li>
                 </ul>
             </div>
         </aside>
@@ -60,7 +61,7 @@
             </div>
 
             <div class="exercise-step active" id="setup">
-                <span class="step-indicator">Step 1 of 7</span>
+                <span class="step-indicator">Step 1 of 6</span>
                 <h2>Open the Repository files in a Code Editor</h2>
                 <p>Using File Explorer:</p>
                 <ul>
@@ -75,7 +76,7 @@
                 </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 2 of 7</span>
+                <span class="step-indicator">Step 2 of 6</span>
                 <h2>Create Your Own Branch</h2>
                 <p>If everyone edits the same file directly in the <b>master</b> branch, Git might struggle to later <b>merge</b> changes properly, leading to <b>merge conflicts</b>.</p>
                 <p>By working in <b>seperate</b> branches, each person can edit their section without interfering with others.</p>
@@ -94,7 +95,7 @@
                 </div>
                 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 3 of 7</span>
+                <span class="step-indicator">Step 3 of 6</span>
                 <h2>Open the Code in a Web Browser</h2>
                 <p>To visually track changes as we go along, we need to have the code open in a web browser.</p>
                 <div class="content-card">
@@ -111,7 +112,7 @@
                 </div>    
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 4 of 7</span>
+                <span class="step-indicator">Step 4 of 6</span>
                 <h2>Editing Lines of Code</h2>
                 <p><b>Everyone</b> is going to have their own section of code to edit, so make sure you're on the correct section for yourself.</p>
                 <p>Let's see an example of how each person will edit their <b>'about me'</b> section.</p>
@@ -133,7 +134,7 @@
 
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 5 of 7</span>
+                <span class="step-indicator">Step 5 of 6</span>
                 <h2>Stage, Commit & Push Your Changes</h2>
                 <p>Now that you've edited your own section, we need to stage and commit this change to the branch your created.</p>
                 <div class="content-card">
@@ -154,7 +155,7 @@
                     </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 6 of 7</span>
+                <span class="step-indicator">Step 6 of 6</span>
                 <h2>Refresh the webpage</h2>
                 <p>To double check that we succesfully saved our changes, refresh your web browser.</p>
                 <p><b><span style="color: #50bcc4;">Note:</span></b> You'll only see <b>your</b> changes because you're in your own branch of development.</p>
@@ -163,52 +164,6 @@
                         <img class="git_gif" src="images/meet_team.gif">
                     </div>
 
-            <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 6 of 7</span>
-                <h2>Merging the Feature Branch into the Master Branch</h2>
-                <p>If you're happy with how your section looks, we go ahead and <b>merge</b> this into the <b>master</b> branch.</p>
-                <div class="content-card">
-                        <ul>
-                            <li>Open your <b>git-team-exercise</b> repository in GitHub</li>
-                            <li>Click on the button at the top of the repository called <b>'Compare & pull request'</b></li>
-                            <li>Scroll down and click <b>'Create pull request'</b></li>
-                            <li>GitHub should state that there is no conflict with the base branch so now click <b>'Merge pull request'</b></li>
-                            <li>Change the commit message if you want to, then click <b>'Confirm merge'</b></li>
-                            <li>Your <b>pull request</b> should have successfully merged</li>
-                            <li>Now you can click <b>'Delete branch'</b> as we've implemented our new feature</li>
-                        </ul>
-                </div>
-                    <div class="image-container">
-                        <img class="git_gif" src="images/meet_team.gif">
-                    </div>
-
-            <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 7 of 7</span>
-                <h2>Pull the Latest Changes</h2>
-                <p>Everyone in your team should have pushed their sections to the <b>remote</b> GitHub repository however, you can still only see <b>your</b> changes.</p>
-                <p>This is because we don't have the most up to date version of the files in our <b>local</b> repository, which doesn't get updated automatically. We have to <b>manually</b> retrieve the latest changes from the remote repository.</p>
-                <div class="content-card">
-                    <div class="step-content">
-                        <p>Run the following commands in Git Bash</p>
-                        <div class="command-block">
-                            <code>git pull origin master</code>
-                            <button class="copy-btn">Copy</button>
-                        </div>
-                    </div>
-                <p>Now when you refresh the webpage, you should see the changes made by everyone else in your team.</p>
-                <p>Your code should be updated too.</p>
-
-                <div class="lesson-summary">
-                    <h3><span style="color: #f08404;">Lesson Summary</span></h3>
-                </div>
-                <ul>
-                    <li>Learned how to create a new branch for making changes.</li>
-                    <li>Created and switched to a personal branch.</li>
-                    <li>Edited the "Meet The Team" page with personal details.</li>
-                    <li>Merged the feature branch into the master branch.</li>
-                    <li>Pulled the latest changes to update the local repository.</li>
-                </ul>
-                
         </div>
     </div>
 
