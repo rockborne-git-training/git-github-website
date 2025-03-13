@@ -123,7 +123,7 @@
                     </div> 
 
             <div class="exercise-step" id="init">
-                        <span class="step-indicator">Step 3 of 7</span>
+                        <span class="step-indicator">Step 4 of 7</span>
                         <h2>Review the Merge on GitHub</h2>
                         <p>We're now going to deal with the merge conflict on GitHub.</p>
                         <div class="content-card">
@@ -133,10 +133,13 @@
                                 <li>GitHub should state that it <b>can't automatically merge</b> the code, but we can still create the pull request</li>
                                 <li>Scroll down and click <b>Create pull request</b></li>
                             </ul>
-                        </div> 
+                        </div>
+                        <div class="image-container">
+                            <img class="git_gif" src="images/merge_conflict_1.gif">
+                        </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 3 of 7</span>
+                <span class="step-indicator">Step 5 of 7</span>
                 <h2>Manually Fixing the Merge Conflict in GitHub</h2>
                 <p>We're now going to deal with the merge conflict on GitHub.</p>
                 <p>After we've clicked on <b>Create pull request</b>, GitHub will tell you that the branch has conflicts that must be resolved, as well as which file it occurs in.</p>
@@ -146,29 +149,36 @@
                         <li>Click <b>Resolve conflicts</b></li>
                         <li>The code which has the merge conflict in should appear on the page, and is specifically highlighted with yellow next to it</b></li>
                     </ul>
+                    <div class="image-container">
+                        <img class="git_gif" src="images/merge_conflict_2.gif">
+                    </div>
                     <p class="lesson-description"><b><span style="color: #50bcc4;">What do the symbols mean?</span></b></p>
                     <ul>
                     </ul>
                     <li><span style="color: #f08404; font-weight: bold;"><<<<<<< branch-name:</span> Everything below this line shows you what’s on the current branch</li>
                     <li><span style="color: #f08404; font-weight: bold;">======= :</span> Is the end of the original lines, everything that follows is what’s on the branch that’s being merged in.</li>
                     <li><span style="color: #f08404; font-weight: bold;">>>>>>>> branch-name:</span> Ending indicator of what’s on the branch that’s being merged in</li>                    
-                </div> 
+                </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 3 of 7</span>
+                <span class="step-indicator">Step 6 of 7</span>
                 <h2>Choose Which Version to Keep</h2>
                 <p>GitHub has told you exactly where the conflict is in your code file.</p>
                 <p>From here, you can either choose one version, combine both, or make your own change.</p>
                 <p>For the purpose of exercise, we'll delete the version from the master branch to show the sequence of steps</p>
                 <div class="content-card">
                     <ul>
-                        <li>Delete lines <b>25, 26 and 28</b></li>
+                        <li>Delete the lines containing the symbols and the branch name</li>
+                        <li>Delete the landline number you <b>don't</b> want to keep</li>
                         <li>You should only be left with one landline number, mobile number and email <b>inside</b> the <b>contact-details</b> div</li>
                     </ul>
                 </div> 
+                <div class="image-container">
+                    <img class="git_gif" src="images/merge_conflict_3.gif">
+                </div>
 
             <div class="exercise-step" id="init">
-                <span class="step-indicator">Step 3 of 7</span>
+                <span class="step-indicator">Step 7 of 7</span>
                 <h2>Confirm the Merge</h2>
                 <p>Now that we've chosen which version to keep, we can mark the conflict has resolved and continue to merge the changes into the <b>master</b> branch.</p>
                 <div class="content-card">
@@ -180,7 +190,10 @@
                         <li>Click <b>Confirm merge</b></li>
                         <li>Now you can <b>delete</b> the <b>merge-conflict</b> branch</li>
                     </ul>
-                </div> 
+                </div>
+                <div class="image-container">
+                    <img class="git_gif" src="images/merge_conflict_4.gif">
+                </div>
 
                 <p class="lesson-description">You have now successfully resolved your first merge conflict.</p>
                 <div class="lesson-summary">
